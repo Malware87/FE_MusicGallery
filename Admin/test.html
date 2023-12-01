@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class Example</title>
+    <style>
+        /* CSS để minh họa */
+        .classB {
+            background-color: lightyellow;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .classA {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Các thẻ div chứa class "classB" -->
+    <div class="classB">Div 1</div>
+    <div class="classB">Div 2</div>
+    <div class="classB">Div 3</div>
+
+    <script>
+        // Lấy tất cả các phần tử chứa class "classB"
+        var elements = document.querySelectorAll('.classB');
+
+        // Duyệt qua các phần tử và thêm class "classA"
+        elements.forEach(function (element) {
+            element.classList.add('classA');
+        });
+    </script>
+
+</body>
+
+</html>

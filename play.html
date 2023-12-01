@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nhac.vnvn</title>
+    <!-- Bootstrap 4 CND -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- link box icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .player {
+            max-width: 100%;
+            background-color: #1E2125;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cover img {
+            max-height: 200px;
+            width: 20rem;
+            border-radius: 10px;
+        }
+        
+        .info h1, .info h2, .info h4 {
+            color: white;
+        }
+        
+        .info h1 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .info h4 {
+            font-size: 12px;
+            font-weight: 400;
+            color: #636367;
+        }
+        
+        .info h2 {
+            
+            font-size: 18px;
+            font-weight: 300;
+        }
+        
+        .button-items {
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        #slider {
+            width: 33rem;
+            height: 4px;
+            background: #151518;
+            border-radius: 2px;
+        }
+        
+        #slider div {
+            width: 4px;
+            height: 4px;
+            background: #EF6DBC;
+            border-radius: 2px;
+        }
+        
+        #timer {
+            color: #494B4E;
+            font-size: 9pt;
+            float: right;
+            font-family: Arial, Sans-Serif;
+            margin-top: 5px;
+        }
+        
+        .controls {
+            margin-top: 20px;
+        }
+        
+        #play, .step-backward, .step-foreward, #pause {
+            width: 30px;
+            height: 30px;
+            fill: #FEFEFE;
+            cursor: pointer;
+        }
+        
+        #play:hover, .step-backward:hover, .step-foreward:hover, #pause:hover {
+            fill: #8F4DA9;
+        }
+        
+        .step-backward, .step-foreward {
+            margin-left: 5px;
+        }
+        
+        #pause {
+            position: absolute;
+            margin-left: -38px;
+        }
+        
+        .social {
+            text-align: center;
+        }
+        
+        .twitter, .github {
+            color: #BDBDBD;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+        
+        .twitter:hover, .github:hover {
+            color: #ecf0f1;
+        }
+        
+        p {
+            color: #BDBDBD;
+        }
+        
+        #skip p {
+            color: #2980b9;
+            cursor: pointer;
+        }
+        
+        #skip p:hover {
+            color: #e74c3c;
+        }
+        
+        .expend {
+            padding: 0.5px;
+            cursor: pointer;
+        }
+        
+        .expend svg:hover g polygon {
+            fill: #EF6DBC;
+        }
+        .iconplayleft li {
+            list-style: none;
+            font-size: 25px;
+            margin: 5px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <!-- Tiêu đề Tên Album -->
+                <div>
+                    <h3>Khi ta say</h3>
+                    <p><b>Người tạo: <a href="#">TNIT</a></b></p>
+                    <p><b>Người tạo:</b> <a href="#">Nhạc Trẻ</a></p>
+                    <p>Cùng lắng nghe những bài hát trong Playlist Khi Ta Say được ban biên tập tuyển chọn để chia sẻ những cung bậc cảm xúc trong cơn say muốn gửi đến bạn.</p>
+                </div>
+
+                <!-- Music Play -->
+                <div class="row">
+                    <div class="player col-12 d-flex">
+                        <ul>
+                            <li class="cover"><img src="http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png"/></li>
+                        </ul>
+                        <ul class="text-center ml-5">
+                           <li class="info">
+                              <h1>The Noisy Freaks</h1>
+                              <h4>Premiere</h4>
+                              <h2>I Need You Back</h2>
+                     
+                              <div class="button-items">
+                                 <audio id="music" preload="auto" loop="false">
+                                    <source src="https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1" type="audio/mp3">
+                                    <source src="https://dl.dropbox.com/s/75jpngrgnavyu7f/The-Noisy-Freaks.ogg?dl=1" type="audio/ogg">
+                                 </audio>
+                                 <div id="slider"><div id="elapsed"></div></div>
+                                 <p id="timer">0:00</p>
+                                 <div class="controls">
+                                    <span class="expend"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
+                                       <g><polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"/></g>
+                                    </svg></span>
+                     
+                                    <svg id="play" viewBox="0 0 25 25" xml:space="preserve">
+                                        <defs><rect x="-49.5" y="-132.9" width="446.4" height="366.4"/></defs>
+                                       <g><circle fill="none" cx="12.5" cy="12.5" r="10.8"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z"/>
+                                       </g>
+                                    </svg>
+                                
+                                    <svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
+                                       <g>
+                                          <rect x="6" y="4.6" width="3.8" height="15.7"/>
+                                          <rect x="14" y="4.6" width="3.9" height="15.7"/>
+                                       </g>
+                                    </svg>
+                     
+                                    <span class="expend"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
+                                       <g><polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7"/></g>
+                                     </svg></span>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                </div>
+                
+                <!-- lời bài hát 
+                     Thêm vào playlist -->
+
+                <div class="row mt-3">
+                    <div class="col-8">
+                        <h3>Túy Âm (Masew x NhatNguyen Remix)</h3>
+                        <h5>Xesi</h5>
+                        <h3>Lời Bài Hát</h3>
+                        <p>Rót đến tràn ly, anh chìm đắm trong men cay đắng nồng,<br>
+                            Khóc chát làn mi, uống cùng anh cho đêm nay say chất ngất !<br>
+                            Dẫu năm tháng ấy còn đâu những đam mê ta kiếm tìm?<br>
+                            Màu mắt xanh ngời lạc giữa mây ngàn về chốn xa xôi...<br>
+                            Hãy say cùng anh, hãy hát cùng anh, hãy khóc cùng anh<br>
+                            Thêm 1 lần...<br>
+                            Để anh được gần trái tim của em dù trong phút giây,<br>
+                            Hình bóng người tan biến dần phía sau những nỗi sầu,<br>
+                            Với em chắc quá đủ cho một mối tình...<br>
+                            Dẫu em không thể ở lại với anh,<br>
+                            Mình chẳng cùng với nhau đi hết quãng đường<br>
+                            Ôm ấp hi vọng một ngày ngát xanh...<br>
+                            Tháng năm thăng trầm dòng đời ngả nghiêng,<br>
+                            Mình tự rời bỏ nhau,<br>
+                            Say đến điên dại, say hết kiếp người, say cho cháy lòng...</p>
+                    </div>
+                    <!-- icon play left -->
+                    <div class="col">
+                        <ul class="d-flex iconplayleft flex-row-reverse">
+                            <li><a href="#"><i class='bx bxs-heart'></i></a></li>
+                            <li><a href="#"><i class='bx bxs-message-square-add'></i></a></li>
+                            <li><a href="#"><i class='bx bx-share-alt'></i></a></li>
+                            <li><a href="#"><i class='bx bxs-phone-call'></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Cùng Nghệ Sĩ -->
+                <div class="d-flex mt-2 mb-2">
+                    <h3>Cùng Nghệ Sĩ</h3>
+                    <!-- <a class="ml-4 mr-2" href="#">Nghe Nhiều</a>
+                    <a href="#">Mới Nhất</a> -->
+                  </div>
+                  <div class="row">
+                      <div class="col-3 pd-0">
+                        <a href="/Login/login.html" class="play ">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
+                        <p> <i class='bx bx-play-circle'></i></p>
+                        </a>
+                        <a href="#">Khi ta chưa say</a>
+                      </div>
+                      <div class="col-3 pd-0" style=" padding: 0;">
+                        <a href="/Login/login.html" class="play ">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
+                        <p> <i class='bx bx-play-circle'></i></p>
+                        </a>
+                        <a href="#">Khi ta say</a>
+                      </div>
+                      <div class="col-3">
+                        <a href="/Login/login.html" class="play ">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxMTjrxfN7X0UV8WoXFry1H4XgskY5FEzZgw&usqp=CAU" alt="anh nhac">
+                        <p> <i class='bx bx-play-circle'></i></p>
+                        </a>
+                        <a href="#">Khi ta say</a>
+                      </div>
+                      <div class="col-3 " style=" padding: 0;" >
+                        <a href="/Login/login.html" class="play">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
+                        <p> <i class='bx bx-play-circle'></i></p>
+                        </a>
+                        <a href="#">Khi ta say</a>
+                      </div>
+                  </div>
+
+            </div>
+            <!-- Quảng Cáo -->
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <script>
+        var music = document.getElementById("music");
+        var playButton = document.getElementById("play");
+        var pauseButton = document.getElementById("pause");
+        var playhead = document.getElementById("elapsed");
+        var timeline = document.getElementById("slider");
+        var timer = document.getElementById("timer");
+        var duration;
+        pauseButton.style.visibility = "hidden";
+
+        var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+        music.addEventListener("timeupdate", timeUpdate, false);
+
+        function timeUpdate() {
+            var playPercent = timelineWidth * (music.currentTime / duration);
+            playhead.style.width = playPercent + "px";
+
+            var secondsIn = Math.floor(((music.currentTime / duration) / 3.5) * 100);
+            if (secondsIn <= 9) {
+                timer.innerHTML = "0:0" + secondsIn;
+            } else {
+                timer.innerHTML = "0:" + secondsIn;
+            }
+        }
+
+        playButton.onclick = function() {
+            music.play();
+            playButton.style.visibility = "hidden";
+            pause.style.visibility = "visible";
+        }
+
+        pauseButton.onclick = function() {
+            music.pause();
+            playButton.style.visibility = "visible";
+            pause.style.visibility = "hidden";
+        }
+
+        music.addEventListener("canplaythrough", function () {
+            duration = music.duration;
+        }, false);
+    </script>
+</body>
+</html>

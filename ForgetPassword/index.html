@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Music</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form>
+                <h1>Forget Password</h1>
+                <span>Enter your email!</span>
+                <input type="email" placeholder="Email" id="email">
+                <button>Forget Password</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <a href="../Login/?#"> <button class="hidden" id="login">Sign In</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.location.href = "./?#";
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy đối tượng form theo id
+            const forgetPasswordForm = document.getElementById("forgetPasswordForm");
+
+            // Bắt sự kiện submit của form
+            forgetPasswordForm.addEventListener("submit", function (event) {
+                // Ngăn chặn hành động mặc định của form (chặn việc chuyển trang)
+                event.preventDefault();
+
+                // Lấy giá trị email từ input
+                const email = document.getElementById("email").value;
+
+                // Gọi hàm xử lý gửi email
+                sendForgetPasswordEmail(email);
+            });
+
+            // Hàm xử lý gửi email
+            function sendForgetPasswordEmail(email) {
+                // Tạo đối tượng request body
+                const requestBody = {
+                    email: email
+                };
+
+                // Gửi yêu cầu đến API server
+                fetch("http://your-api-server.com/forgetpassword", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestBody)
+                })
+                    .then(response => {
+                        if (response.status === 200) {
+                            // Xử lý khi email gửi thành công
+                            console.log("Email sent successfully!");
+                        } else if (response.status === 401) {
+                            // Xử lý khi email không có trong database
+                            console.log("Email not found in the database");
+                        } else {
+                            // Xử lý khi có lỗi khác từ server
+                            console.error('Unexpected response from server');
+                        }
+                    })
+                    .catch(error => {
+                        // Xử lý lỗi khi gửi email thất bại
+                        console.error('Error:', error);
+                    });
+            }
+        });
+    </script>
+</body>
+
+</html>

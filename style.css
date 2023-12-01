@@ -1,0 +1,144 @@
+
+* body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    /* color: white; */
+    color: black;
+}
+a:hover {
+    color: aquamarine;
+}
+
+/* Header */
+
+.center{
+    align-items: center;
+    justify-content: center;
+}
+input:focus {
+    outline: none;
+}
+.header {
+    background-color: rgb(0, 0, 0);
+}
+.header a {
+    color: white;
+}
+.header-search input {
+    /* width: 380px; */
+    width: 25em;
+    height: 35px;
+    background-color: white;
+    border: none;
+    border-end-start-radius: 25px;
+    border-start-start-radius: 25px;
+}
+.header-search button {
+    width: 40px;
+    height: 35px;
+    background-color: white;
+    border: none;
+    border-end-end-radius: 25px;
+    border-start-end-radius: 25px;
+}
+
+
+/* ===============Footer================ */
+.footer_list li a {
+ color: white;
+ text-decoration: none;
+}
+
+
+/* ===================Content================ */
+.carousel-item img {
+    height: 300px;
+}
+
+
+
+/* play list */
+.play {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+     
+   }
+   .play img {
+     height: 200px;
+     width: 100%;
+     position: relative;
+     
+     
+   }
+   .play p {
+     height: 200px;
+     width: 90%;
+     font-size: 60px;
+     position: absolute;
+     color: white;
+     margin: 0;
+     display: none;
+   }
+   
+   .play:hover p{
+     
+     background-color: rgba(0, 0,0,0.3);
+     display: block;
+     display: flex;
+     justify-content: center;
+    align-items: center;
+   }
+
+
+/* Bài Hát Mới */
+
+   .newsongtext {
+    width: 100%;
+   }
+   .newsong img {
+    height: 60px;
+    width: 100px;
+   }
+
+
+/* Play music */
+
+
+   
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .header-search input{
+        width: 100px;
+        display: none;
+    }
+    .header-search button:hover + #search-input {
+        display: block;
+    }
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+   
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+
+}
