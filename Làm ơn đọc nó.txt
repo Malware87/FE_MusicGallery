@@ -1,0 +1,13 @@
+1. Lần đầu clone về thì tạo nhánh mới luôn và đẩy nhánh lên với 2 lệnh dưới đấy:
+	git checkout Ten_nhanh
+	git push origin Ten_nhanh
+2. BẮT BUỘC: mỗi lần trước khi code checkout về nhánh của mình và pull những gì mới nhất với 2 lệnh dưới đây:
+	git checkout Ten_nhanh
+	git pull origin main
+3. BẮT BUỘC: mỗi lần trước khi push commit code lại và pull lại từ main trước khi push
+	git add .
+	git commit -m "something"
+	git pull origin main
+	<nếu ở đây trả về auto merge thành công hoặc already up to date thì bỏ qua>
+	<nếu có conflict thì phải tự đọc code + xử lý rồi mới tiếp tục> 
+	git push origin Ten_nhanh
