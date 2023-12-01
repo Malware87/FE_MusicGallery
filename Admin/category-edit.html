@@ -155,7 +155,7 @@
               <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                   <div class="iq-header-title">
-                    <h4 class="card-title">Add Categories</h4>
+                    <h4 class="card-title">Update Categories</h4>
                   </div>
                 </div>
                 <div class="iq-card-body">
@@ -182,11 +182,17 @@
                     <button
                       type="button"
                       class="btn btn-primary"
-                      onclick="addCategory()"
+                      onclick="updateInfo()"
                     >
                       Submit
                     </button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button
+                      type="reset"
+                      class="btn btn-danger"
+                      onclick="resetInfo()"
+                    >
+                      Reset
+                    </button>
                   </form>
                 </div>
               </div>
@@ -196,36 +202,69 @@
       </div>
     </div>
     <script>
-      function addCategory() {
-        const categoryName = document.getElementById("categoryName").value;
-        const categoryDescription = document.getElementById(
+      let categoryID, name, description;
+      // Lấy giá trị của 'id' từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      categoryID = urlParams.get("id");
+      fetch(`http://127.0.0.1:8000/api/genre?id=${categoryID}`, {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          name = data.name;
+          description = data.description;
+          document.getElementById("categoryName").value = name;
+          document.getElementById("categoryDescription").value = description;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      function updateInfo() {
+        // Lấy giá trị từ các trường input
+        const name = document.getElementById("categoryName").value;
+        const description = document.getElementById(
           "categoryDescription"
         ).value;
+        var formData = new FormData();
+        // Tạo đối tượng FormData để chứa dữ liệu cần gửi
+        formData.append("id", categoryID);
+        formData.append("name", name);
+        formData.append("description", description);
 
-        const formData = new FormData();
-        formData.append("name", categoryName);
-        formData.append("description", categoryDescription);
-
-        fetch("http://127.0.0.1:8000/api/genre/add", {
+        // Gửi dữ liệu lên server sử dụng Fetch API hoặc AJAX
+        fetch("http://127.0.0.1:8000/api/genre", {
           method: "POST",
           body: formData,
+          // Các tùy chọn khác nếu cần
         })
           .then((response) => {
-            if (!response.ok) {
-              throw new Error("Thêm thể loại không thành công");
+            if (response.ok) {
+              // Xử lý khi gửi thành công
+              console.log("Update successful");
+              showPopup("SuccessPopup");
+              return response.json();
+            } else {
+              // Xử lý khi gửi thất bại
+              console.error("Update failed");
             }
-            return response.json();
           })
           .then((data) => {
-            console.log("Thêm thể loại thành công:", data);
-            showPopup("SuccessPopup");
+            if (data.avatar) {
+              const avatar = data.avatar;
+            }
           })
           .catch((error) => {
-            console.error("Lỗi khi thêm thể loại:", error.message);
+            // Xử lý lỗi khi gửi dữ liệu
             showPopup("FailedPopup");
+            console.error("Error:", error);
           });
       }
-
       function showPopup(popupId) {
         const popup = document.getElementById(popupId);
         popup.style.display = "block";
@@ -234,8 +273,16 @@
           popup.style.display = "none";
         }, 3000);
       }
+      function resetInfo() {
+        document.getElementById("categoryName").value = name;
+        document.getElementById("categoryDescription").value = description;
+      }
     </script>
-    <div id="SuccessPopup" class="mess-popup success">Thêm thành công!</div>
+    <!-- Popup -->
+    <div id="FailedPopup" class="mess-popup failed">
+      Cập nhật không thành công!
+    </div>
+    <div id="SuccessPopup" class="mess-popup success">Cập nhật thành công!</div>
     <style>
       /* CSS để định dạng popup */
       .mess-popup {
@@ -255,8 +302,7 @@
         background-color: #ff0000;
       }
     </style>
-    <div id="FailedPopup" class="mess-popup failed">Thêm không thành công!</div>
-    <!-- Wrapper END -->
+
     <!-- Footer -->
 
     <!-- color-customizer END -->
