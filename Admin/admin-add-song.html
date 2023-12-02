@@ -98,7 +98,7 @@
                         </div>
                      </div>
                      <div class="iq-card-body">
-                        <form action="admin-song.html">
+                        <form action="admin-song.html" enctype="multipart/form-data">
                            <div class="form-group">
                               <label>Title:</label>
                               <input type="text" class="form-control">
@@ -106,7 +106,7 @@
 
                            <div class="form-group">
                               <label>Genre:</label>
-                              <select class="form-control" id="exampleFormControlSelect1">
+                              <select class="form-control" id="genre">
                                  <option selected="" disabled="">genre</option>
                                  <option>Filmi Song</option>
                                  <option>Surf Song</option>
@@ -122,7 +122,7 @@
                            </div>
                            <div class="form-group">
                               <label>Artist</label>
-                              <select class="form-control" id="exampleFormControlSelect1">
+                              <select class="form-control" id="singer">
                                  <option selected="" disabled="">artist</option>
                                  <option>Edyta Gorniak</option>
                                  <option>Billie Eilish</option>
@@ -143,12 +143,12 @@
                            </div>
                            <div class="form-group">
                               <label>Audio:</label>
-                              <div class="custom-file" enctype="multipart/form-data">
+                              <div class="custom-file">
                                  <input type="file" class="custom-file-input" id="customFile" accept="audio/mp3">
                                  <label class="custom-file-label" for="customFile">Choose file</label>
                               </div>
                            </div>
-                           <button type="submit" class="btn btn-primary">Submit</button>
+                           <button type="button" class="btn btn-primary" onclick="AddSong()">Submit</button>
                            <button type="reset" class="btn btn-danger">Reset</button>
                         </form>
                      </div>
@@ -158,6 +158,98 @@
          </div>
       </div>
    </div>
+   <script>
+      fetch('http://127.0.0.1:8000/api/genre')
+         .then((response) => {
+            return response.json();
+         }).then((data) => {
+            const genreTable = document.getElementById('genre');
+            genreTable.innerHTML = '<option selected="" disabled="">Genre</option>';
+            data.forEach((genre) => {
+               const row = `
+                  <option value="${genre.name}">${genre.name}</option>
+               `;
+               genreTable.innerHTML += row;
+            });
+         });
+      fetch('http://127.0.0.1:8000/api/singer', {
+         method: "POST"
+      })
+         .then((response) => {
+            return response.json();
+         }).then((data) => {
+            const genreTable = document.getElementById('singer');
+            genreTable.innerHTML = '<option selected = "" disabled = "" >Artist</option>';
+            data.forEach((singer) => {
+               const row = `
+                  <option value="${singer.id}">${singer.name}</option>
+               `;
+               genreTable.innerHTML += row;
+            });
+         });
+      function AddSong() {
+         const title = document.querySelector('input[type="text"]').value;
+         const genre = document.getElementById('genre').value;
+         const artist = document.getElementById('singer').value;
+         const lyrics = document.querySelector('textarea').value;
+
+         // Tạo đối tượng FormData để chứa dữ liệu cần gửi
+         const formData = new FormData();
+         formData.append('title', title);
+         formData.append('genre', genre);
+         formData.append('artist', artist);
+         formData.append('lyrics', lyrics);
+
+         // Lấy file từ input type="file"
+         const audioFileInput = document.getElementById('customFile');
+         const audioFile = audioFileInput.files[0];
+         if (!audioFile)
+            showPopup('NoAudioPopup');;
+         formData.append('audio', audioFile);
+         fetch('http://127.0.0.1:8000/api/song/addsong', {
+            method: 'POST',
+            body: formData,
+         })
+            .then(response => {
+               if (!response.ok) {
+                  showPopup('FailedPopup');
+               } else {
+                  showPopup('SuccessPopup');
+               }
+            });
+      }
+      function showPopup(popupId) {
+         const popup = document.getElementById(popupId);
+         popup.style.display = "block";
+         // Ẩn popup sau 3 giây
+         setTimeout(() => {
+            popup.style.display = "none";
+         }, 3000);
+      }
+   </script>
+   <!-- Pop Up -->
+   <div id="FailedPopup" class="mess-popup failed">Thêm không thành công!</div>
+   <div id="NoAudioPopup" class="mess-popup failed">Không tìm thấy file nhạc!</div>
+   <div id="SuccessPopup" class="mess-popup success">Thêm thành công!</div>
+   <style>
+      /* CSS để định dạng popup */
+      .mess-popup {
+         position: fixed;
+         bottom: 10px;
+         right: 10px;
+         color: white;
+         padding: 10px;
+         display: none;
+      }
+
+      .success {
+         background-color: #4caf50;
+      }
+
+      .failed {
+         background-color: #ff0000;
+      }
+   </style>
    <!-- Wrapper END -->
    <!-- Footer -->
 

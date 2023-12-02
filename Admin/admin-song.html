@@ -197,10 +197,7 @@
                <td>
                   <div class="flex align-items-center list-user-action">
                      <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
-                        data-original-title="Edit" href="admin-add-category.html"><i
-                           class="ri-pencil-line"></i></a>
-                     <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
-                        data-original-title="Delete" href="#"><i
+                        data-original-title="Delete" href="#" onclick="DeleteSong(${song.id})"><i
                            class="ri-delete-bin-line"></i></a>
                   </div>
                </td>
@@ -209,6 +206,22 @@
             tableBody.innerHTML += row;
          });
       }
+      function DeleteSong(id) {
+         fetch('http://127.0.0.1:8000/api/song', {
+            method: 'DELETE',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: id }),
+         }).then(response => {
+            if (!response.ok) {
+               showPopup('FailedPopup');
+            } else {
+               showPopup('SuccessPopup');
+            }
+            fetchData();
+         })
+      };
       function nextPage() {
          currentPage++;
          fetchData();
@@ -282,7 +295,37 @@
          }
       }
       fetchData();
+      function showPopup(popupId) {
+         const popup = document.getElementById(popupId);
+         popup.style.display = "block";
+         // Ẩn popup sau 3 giây
+         setTimeout(() => {
+            popup.style.display = "none";
+         }, 3000);
+      }
    </script>
+   <!-- Pop Up -->
+   <div id="FailedPopup" class="mess-popup failed">Xóa không thành công!</div>
+   <div id="SuccessPopup" class="mess-popup success">Xóa thành công!</div>
+   <style>
+      /* CSS để định dạng popup */
+      .mess-popup {
+         position: fixed;
+         bottom: 10px;
+         right: 10px;
+         color: white;
+         padding: 10px;
+         display: none;
+      }
+
+      .success {
+         background-color: #4caf50;
+      }
+
+      .failed {
+         background-color: #ff0000;
+      }
+   </style>
    <!-- Wrapper END -->
    <!-- Footer -->
 
