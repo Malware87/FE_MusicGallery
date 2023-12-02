@@ -7,5 +7,5 @@ function logout() {
     localStorage.removeItem('userEmail');
 
     // Chuyển hướng hoặc thực hiện các hành động khác sau khi đăng xuất
-    window.location.href('../');
+    window.location.href = "../";
 }
