@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Muzik - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>Muzik- Responsive Bootstrap 4 Admin Dashboard Template</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap CSS -->
@@ -22,7 +22,7 @@
     <script src="js/checkRole.js"></script>
   </head>
 
-  <body class="sidebar-main-active right-column-fixed">
+  <body>
     <!-- loader Start -->
     <div id="loading">
       <div id="loading-center"></div>
@@ -54,22 +54,22 @@
         <div id="sidebar-scrollbar">
           <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
-              <li class="ifAdmin">
+              <li class="active" class="ifAdmin">
                 <a
                   href="#admin"
                   class="iq-waves-effect"
                   data-toggle="collapse"
-                  aria-expanded="false"
+                  aria-expanded="true"
                   ><span class="ripple rippleEffect"></span
                   ><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span
                   ><i class="ri-arrow-right-s-line iq-arrow-right"></i
                 ></a>
                 <ul
                   id="admin"
-                  class="iq-submenu collapse"
+                  class="iq-submenu collapse show"
                   data-parent="#iq-sidebar-toggle"
                 >
-                  <li>
+                  <li class="active">
                     <a href="admin-category.html"
                       ><i class="ri-function-line"></i>Category</a
                     >
@@ -87,19 +87,19 @@
                 </ul>
               </li>
 
-              <li class="active active-menu">
+              <li>
                 <a
                   href="#userinfo"
                   class="iq-waves-effect"
                   data-toggle="collapse"
-                  aria-expanded="true"
+                  aria-expanded="false"
                   ><span class="ripple rippleEffect"></span
                   ><i class="las la-user-tie iq-arrow-left"></i><span>User</span
                   ><i class="ri-arrow-right-s-line iq-arrow-right"></i
                 ></a>
                 <ul
                   id="userinfo"
-                  class="iq-submenu collapse show"
+                  class="iq-submenu collapse"
                   data-parent="#iq-sidebar-toggle"
                   style=""
                 >
@@ -108,12 +108,12 @@
                       ><i class="las la-id-card-alt"></i>User Profile</a
                     >
                   </li>
-                  <li class="active">
+                  <li>
                     <a href="playlist.html"
                       ><i class="las la-file-audio"></i>PlayList</a
                     >
                   </li>
-                  <li class="active">
+                  <li>
                     <a href="profile-edit.html"
                       ><i class="las la-edit"></i>User Edit</a
                     >
@@ -145,117 +145,55 @@
           >LOGOUT
         </button>
       </div>
-      <!-- TOP Nav Bar -->
 
       <!-- TOP Nav Bar END -->
       <!-- Page Content  -->
       <div id="content-page" class="content-page">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-sm-12">
               <div class="iq-card">
-                <div class="iq-card-body p-0">
-                  <div class="iq-edit-list">
-                    <ul class="iq-edit-profile d-flex nav nav-pills">
-                      <li class="col-md-3 p-0">
-                        <a
-                          class="nav-link active"
-                          data-toggle="pill"
-                          href="#personal-information"
-                        >
-                          User's Information
-                        </a>
-                      </li>
-                    </ul>
+                <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                    <h4 class="card-title">Update Categories</h4>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="iq-edit-list-data">
-                <div class="tab-content">
-                  <div
-                    class="tab-pane fade active show"
-                    id="personal-information"
-                    role="tabpanel"
-                  >
-                    <div class="iq-card">
-                      <div
-                        class="iq-card-header d-flex justify-content-between"
-                      >
-                        <div class="iq-header-title">
-                          <h4 class="card-title">User's Information</h4>
-                        </div>
-                      </div>
-                      <div class="iq-card-body">
-                        <form enctype="multipart/form-data">
-                          <div class="form-group row align-items-center">
-                            <div class="col-md-12">
-                              <div class="profile-img-edit">
-                                <img
-                                  class="profile-pic"
-                                  id="profile-pic"
-                                  src="images/user/11.png"
-                                  alt="profile-pic"
-                                  style="height: 150px !important"
-                                />
-                                <div class="p-image">
-                                  <i class="ri-pencil-line upload-button"></i>
-                                  <input
-                                    class="file-upload"
-                                    type="file"
-                                    accept="image/*"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row align-items-center">
-                            <div class="form-group col-sm-6">
-                              <label for="uname">User Name:</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="uname"
-                                value=""
-                              />
-                            </div>
-                            <div class="form-group col-sm-6 ifAdmin">
-                              <label>Role:</label>
-                              <select class="form-control" id="role">
-                                <option value="User">User</option>
-                                <option value="Admin">Admin</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                              <label for="email">Email:</label>
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="cname"
-                                value=""
-                                readonly
-                              />
-                            </div>
-                          </div>
-                          <button
-                            type="button"
-                            class="btn btn-primary mr-2"
-                            onclick="updateInfo()"
-                          >
-                            Submit
-                          </button>
-                          <button
-                            type="button"
-                            class="btn iq-bg-danger"
-                            onclick="resetInfo()"
-                          >
-                            Cancel
-                          </button>
-                        </form>
-                      </div>
+                <div class="iq-card-body">
+                  <form id="categoryForm">
+                    <div class="form-group">
+                      <label for="categoryName">Category Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        required
+                        id="categoryName"
+                      />
                     </div>
-                  </div>
+                    <div class="form-group">
+                      <label for="categoryDescription"
+                        >Category Description:</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="4"
+                        id="categoryDescription"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onclick="updateInfo()"
+                    >
+                      Submit
+                    </button>
+                    <button
+                      type="reset"
+                      class="btn btn-danger"
+                      onclick="resetInfo()"
+                    >
+                      Reset
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -263,9 +201,91 @@
         </div>
       </div>
     </div>
+    <script>
+      let categoryID, name, description;
+      // Lấy giá trị của 'id' từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      categoryID = urlParams.get("id");
+      fetch(`http://127.0.0.1:8000/api/genre?id=${categoryID}`, {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          name = data.name;
+          description = data.description;
+          document.getElementById("categoryName").value = name;
+          document.getElementById("categoryDescription").value = description;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      function updateInfo() {
+        // Lấy giá trị từ các trường input
+        const name = document.getElementById("categoryName").value;
+        const description = document.getElementById(
+          "categoryDescription"
+        ).value;
+        var formData = new FormData();
+        // Tạo đối tượng FormData để chứa dữ liệu cần gửi
+        formData.append("id", categoryID);
+        formData.append("name", name);
+        formData.append("description", description);
+
+        // Gửi dữ liệu lên server sử dụng Fetch API hoặc AJAX
+        fetch("http://127.0.0.1:8000/api/genre", {
+          method: "POST",
+          body: formData,
+          // Các tùy chọn khác nếu cần
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Xử lý khi gửi thành công
+              console.log("Update successful");
+              showPopup("SuccessPopup");
+              return response.json();
+            } else {
+              // Xử lý khi gửi thất bại
+              console.error("Update failed");
+            }
+          })
+          .then((data) => {
+            if (data.avatar) {
+              const avatar = data.avatar;
+            }
+          })
+          .catch((error) => {
+            // Xử lý lỗi khi gửi dữ liệu
+            showPopup("FailedPopup");
+            console.error("Error:", error);
+          });
+      }
+      function showPopup(popupId) {
+        const popup = document.getElementById(popupId);
+        popup.style.display = "block";
+        // Ẩn popup sau 3 giây
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      }
+      function resetInfo() {
+        document.getElementById("categoryName").value = name;
+        document.getElementById("categoryDescription").value = description;
+      }
+    </script>
+    <!-- Popup -->
+    <div id="FailedPopup" class="mess-popup failed">
+      Cập nhật không thành công!
+    </div>
+    <div id="SuccessPopup" class="mess-popup success">Cập nhật thành công!</div>
     <style>
       /* CSS để định dạng popup */
-      .delete-popup {
+      .mess-popup {
         position: fixed;
         bottom: 10px;
         right: 10px;
@@ -282,125 +302,12 @@
         background-color: #ff0000;
       }
     </style>
-    <div id="deleteSuccessPopup" class="delete-popup success">
-      Đổi mật khẩu thành công!
-    </div>
-    <div id="deleteFailedPopup" class="delete-popup failed">
-      Mật khẩu cũ không đúng!
-    </div>
-    <div id="newPasswordFailedPopup" class="delete-popup failed">
-      Xác nhận mật khẩu sai!
-    </div>
-    <div id="updateFailedPopup" class="delete-popup failed">
-      Đổi thông tin thất bại!
-    </div>
-    <div id="updateSuccessPopup" class="delete-popup success">
-      Đổi thông tin thành công!
-    </div>
-    <script>
-      let userId, username, email, avatar, role;
-      // Lấy giá trị của 'id' từ URL
-      const urlParams = new URLSearchParams(window.location.search);
-      userId = urlParams.get("id");
 
-      const requestBody = {
-        id: userId,
-      };
-      fetch("http://127.0.0.1:8000/api/user/getuser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          username = data.username;
-          email = data.email;
-          avatar = data.avatar;
-          role = data.role;
-          document.getElementById("uname").value = username;
-          document.getElementById("cname").value = email;
-          document.getElementById("role").value = role;
-          const profilePic = document.getElementById("profile-pic");
-          profilePic.src = "http://127.0.0.1:8000" + avatar;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-
-      function showPopup(id) {
-        const popup = document.getElementById(id);
-        popup.style.display = "block";
-
-        // Ẩn popup sau 3 giây
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 3000);
-      }
-      function updateInfo() {
-        // Lấy giá trị từ các trường input
-        const username = document.getElementById("uname").value;
-        const role = document.getElementById("role").value;
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id");
-        var formData = new FormData();
-        // Lấy file ảnh từ input type="file"
-        const fileInput = document.querySelector('input[type="file"]');
-        if (fileInput) {
-          const avatar = fileInput.files[0];
-          formData.append("avatar", avatar);
-        }
-
-        // Tạo đối tượng FormData để chứa dữ liệu cần gửi
-        formData.append("id", id);
-        formData.append("username", username);
-        formData.append("role", role);
-
-        // Gửi dữ liệu lên server sử dụng Fetch API hoặc AJAX
-        fetch("http://127.0.0.1:8000/api/user/update", {
-          method: "POST",
-          body: formData,
-          // Các tùy chọn khác nếu cần
-        })
-          .then((response) => {
-            if (response.ok) {
-              // Xử lý khi gửi thành công
-              console.log("Update successful");
-              showPopup("updateSuccessPopup");
-              return response.json();
-            } else {
-              // Xử lý khi gửi thất bại
-              console.error("Update failed");
-            }
-          })
-          .then((data) => {
-            if (data.avatar) {
-              const avatar = data.avatar;
-            }
-          })
-          .catch((error) => {
-            // Xử lý lỗi khi gửi dữ liệu
-            showPopup("updateFailedPopup");
-            console.error("Error:", error);
-          });
-      }
-      function resetInfo() {
-        document.getElementById("uname").value = username;
-        document.getElementById("cname").value = email;
-        document.getElementById("role").value = role;
-      }
-    </script>
-    <!-- Wrapper END -->
     <!-- Footer -->
 
     <!-- color-customizer END -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/checkRole.js"></script>
     <script src="js/checkAdmin.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -426,7 +333,8 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- Smooth Scrollbar JavaScript -->
     <script src="js/smooth-scrollbar.js"></script>
-
+    <!-- lottie JavaScript -->
+    <script src="js/lottie.js"></script>
     <!-- am core JavaScript -->
     <script src="js/core.js"></script>
     <!-- am charts JavaScript -->
@@ -439,12 +347,21 @@
     <script src="js/maps.js"></script>
     <!-- am worldLow JavaScript -->
     <script src="js/worldLow.js"></script>
+    <!-- Raphael-min JavaScript -->
+    <script src="js/raphael-min.js"></script>
+    <!-- Morris JavaScript -->
+    <script src="js/morris.js"></script>
+    <!-- Morris min JavaScript -->
+    <script src="js/morris.min.js"></script>
+    <!-- Flatpicker Js -->
+    <script src="js/flatpickr.js"></script>
     <!-- Style Customizer -->
     <script src="js/style-customizer.js"></script>
+    <!-- Chart Custom JavaScript -->
     <script src="js/chart-custom.js"></script>
-    <!-- music js -->
+    <!-- Music js -->
     <script src="js/music-player.js"></script>
-    <!-- music-player js -->
+    <!-- Music-player js -->
     <script src="js/music-player-dashboard.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/custom.js"></script>

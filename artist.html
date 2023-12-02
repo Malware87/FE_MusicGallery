@@ -24,12 +24,56 @@
     <link rel="stylesheet" href="Nam.css">
     <script src="./Admin/js/loginTrue.js"></script>
 
+
     <style>
-       
-  .topcontent-list-widget-right{
-    display: none;
-}
-    </style>
+      .topcontent-list-widget-right{
+        display: none;
+    }
+      /* CSS cho avatar box */
+      .avatar-box {
+          position: relative;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+
+      .avatar-box img {
+          width: 30px;
+          /* Độ rộng của ảnh avatar */
+          height: 30px;
+          /* Chiều cao của ảnh avatar */
+          border-radius: 50%;
+          /* Bo tròn ảnh */
+          margin-right: 8px;
+          /* Khoảng cách giữa ảnh và dropdown icon */
+      }
+
+      /* CSS cho dropdown box */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 120px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          margin-top: 200px;
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown-content a:hover {
+          background-color: #ddd;
+      }
+
+      .show {
+          display: block;
+      }
+  </style>
     
 </head>
 <body>
@@ -51,52 +95,7 @@
             <a class="ml-2" href="./Login/?#">Đăng Kí</a>
         </div>
     </div>
-    <style>
-        /* CSS cho avatar box */
-        .avatar-box {
-            position: relative;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .avatar-box img {
-            width: 30px;
-            /* Độ rộng của ảnh avatar */
-            height: 30px;
-            /* Chiều cao của ảnh avatar */
-            border-radius: 50%;
-            /* Bo tròn ảnh */
-            margin-right: 8px;
-            /* Khoảng cách giữa ảnh và dropdown icon */
-        }
-
-        /* CSS cho dropdown box */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 120px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            margin-top: 200px;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .show {
-            display: block;
-        }
-    </style>
+   
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -469,5 +468,105 @@
             </div>
         </div>
         </div>
+        <footer class="page-footer font-small indigo bg-dark">
+
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left">
+        
+            <!-- Grid row -->
+            <div class="row">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 mx-auto">
+        
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Thông Tin</h5>
+        
+                <ul class="list-unstyled footer_list ">
+                  <li>
+                    <a href="#!">Very long link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Very long link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Very long link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Very long link 4</a>
+                  </li>
+                </ul>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 mx-auto">
+        
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Bảng Xếp Hạng</h5>
+        
+                <ul class="list-unstyled footer_list">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 mx-auto">
+        
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Tải Ứng Dụng</h5>
+        
+                <ul class="list-unstyled footer_list">
+                  
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 mx-auto">
+        
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Liên Kết</h5>
+        
+                <ul class="list-unstyled footer_list">
+                  
+                </ul>
+        
+              </div>
+              <!-- Grid column -->
+        
+            </div>
+            <!-- Grid row -->
+        
+          </div>
+          <!-- Footer Links -->
+        
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3 text-white">© 2023 Copyright:
+            <a href="/"> TNIT</a>
+          </div>
+          <!-- Copyright -->
+        
+        </footer>
 
 </body>
