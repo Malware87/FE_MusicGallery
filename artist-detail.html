@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap 4 CND -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- link box icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link css -->
+    <link rel="stylesheet" href="Nam.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+      <!-- header -->
+  <div class="row header text-light" style="height: 55px;">
+    <div class="col-3 header-logo">
+        <a href=""><img style="height: 50px; width:200px;" src="data:image/png;base64,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" alt="logo header"></a>
+    </div>
+    <div class="col d-flex center header-search">
+        <input  id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
+        <button class="mr-2"><i class='bx bx-search'></i></button>
+    </div>
+    <div class="col-3 d-flex center">
+        <a class="mr-2" href="#">Đăng Nhập</a>
+        <p class="mt-3">/</p>
+        <a class="ml-2" href="#">Đăng Kí</a>
+    </div>
+</div>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-3">
+        <li class="nav-item dropdown ml-3">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Chủ Đề
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown ml-3">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Bảng Xếp Hạng
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown ml-3">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Album
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nghệ Sĩ
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    
+
+    <div class="container">
+        <div class="text-center">
+            <img class="imgArtis_detail" src="data:image/jpeg;base64,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" alt="img-ca-sĩ">
+            <div style="margin-top: -100px; color: white">
+                <h1><b>Mỹ Tâm</b></h1>
+                <p>ca sĩ này hát rất hay nha .....</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h1 class="mt-3" style="padding-left: 40px; width: 380px" >đặt gì thì điền vào </h1>
+                <ul>
+                    <li class=" mt-1 mb-2 pt-3 w-100 pb-2" style="border-bottom: 1px solid black; width: 380px; list-style: none;">
+                        <a class="mb-3" href="#"><b>Name Song</b></a>
+                    </li>
+                    <li class=" mt-1 mb-2 pt-3 w-100 pb-2" style="border-bottom: 1px solid black; width: 380px; list-style: none;">
+                        <a class="mb-3" href="#"><b>Name Song</b></a>
+                    </li>
+                    <li class=" mt-1 mb-2 pt-3 w-100 pb-2" style="border-bottom: 1px solid black; width: 380px; list-style: none;">
+                        <a class="mb-3" href="#"><b>Name Song</b></a>
+                    </li>
+                    <li class=" mt-1 mb-2 pt-3 w-100 pb-2" style="border-bottom: 1px solid black; width: 380px; list-style: none;">
+                        <a class="mb-3" href="#"><b>Name Song</b></a>
+                    </li>
+                  
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul class="list-playlist mt-5">
+                    <li class="artist-1 d-flex">
+                     <div class="d-flex">
+                        <div class="mr-4">
+                            <a href="#">
+                                <div class="image-container">
+                                  <img style="height: 100px; width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg/800px-MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg" class="image">
+                                  </div>
+                                  <a  href="#"><b>mỹ Tâm</b></a>
+                          </div>
+                          <div>
+                            <a href="#">
+                                <div class="image-container">
+                                  <img style="height: 100px; width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg/800px-MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg" class="image">
+                                  </div>
+                                  <a  href="#"><b>mỹ Tâm</b></a>
+                          </div>
+                     </div>
+                    </li>
+                    <li class="artist-1 d-flex">
+                        <div class="d-flex">
+                           <div class="mr-4">
+                               <a href="#">
+                                   <div class="image-container">
+                                     <img style="height: 100px; width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg/800px-MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg" class="image">
+                                     </div>
+                                     <a  href="#"><b>mỹ Tâm</b></a>
+                             </div>
+                             <div>
+                               <a href="#">
+                                   <div class="image-container">
+                                     <img style="height: 100px; width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg/800px-MY_TAM_-_LIGHT_%26_SHADOW_LIVE_-_INAX_VIETNAM.jpg" class="image">
+                                     </div>
+                                     <a  href="#"><b>mỹ Tâm</b></a>
+                             </div>
+                        </div>
+                       </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small indigo bg-dark">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+      
+          <!-- Grid row -->
+          <div class="row">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+      
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Thông Tin</h5>
+      
+              <ul class="list-unstyled footer_list ">
+                <li>
+                  <a href="#!">Very long link 1</a>
+                </li>
+                <li>
+                  <a href="#!">Very long link 2</a>
+                </li>
+                <li>
+                  <a href="#!">Very long link 3</a>
+                </li>
+                <li>
+                  <a href="#!">Very long link 4</a>
+                </li>
+              </ul>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <hr class="clearfix w-100 d-md-none">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+      
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Bảng Xếp Hạng</h5>
+      
+              <ul class="list-unstyled footer_list">
+                <li>
+                  <a href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!">Link 4</a>
+                </li>
+              </ul>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <hr class="clearfix w-100 d-md-none">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+      
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Tải Ứng Dụng</h5>
+      
+              <ul class="list-unstyled footer_list">
+                
+      
+            </div>
+            <!-- Grid column -->
+      
+            <hr class="clearfix w-100 d-md-none">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+      
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Liên Kết</h5>
+      
+              <ul class="list-unstyled footer_list">
+                
+              </ul>
+      
+            </div>
+            <!-- Grid column -->
+      
+          </div>
+          <!-- Grid row -->
+      
+        </div>
+        <!-- Footer Links -->
+      
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-white">© 2023 Copyright:
+          <a href="/"> TNIT</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+</body>
+</html>
