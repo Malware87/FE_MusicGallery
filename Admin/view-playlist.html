@@ -1,221 +1,310 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Muzik - Responsive Bootstrap 4 Admin Dashboard Template</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Typography CSS -->
-    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/typography.css" />
     <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-<body class="sidebar-main-active right-column-fixed">
+  <body class="sidebar-main-active right-column-fixed">
     <!-- loader Start -->
     <div id="loading">
-        <div id="loading-center">
-        </div>
+      <div id="loading-center"></div>
     </div>
     <!-- loader END -->
     <!-- Wrapper Start -->
     <div class="wrapper">
-        <!-- Sidebar  -->
-        <div class="iq-sidebar">
-            <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="../" class="header-logo">
-                    <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
-                    <div class="logo-title">
-                        <span class="text-primary text-uppercase">Muzik</span>
-                    </div>
-                </a>
-                <div class="iq-menu-bt-sidebar">
-                    <div class="iq-menu-bt align-self-center">
-                        <div class="wrapper-menu">
-                            <div class="main-circle"><i class="las la-bars"></i></div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Sidebar  -->
+      <div class="iq-sidebar">
+        <div class="iq-sidebar-logo d-flex justify-content-between">
+          <a href="../" class="header-logo">
+            <img
+              src="images/logo.png"
+              class="img-fluid rounded-normal"
+              alt=""
+            />
+            <div class="logo-title">
+              <span class="text-primary text-uppercase">Muzik</span>
             </div>
-            <div id="sidebar-scrollbar">
-                <nav class="iq-sidebar-menu">
-                    <ul id="iq-sidebar-toggle" class="iq-menu">
-
-                        <li class="ifAdmin">
-                            <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
-                                    class="ripple rippleEffect"></span><i
-                                    class="ri-admin-line iq-arrow-left"></i><span>Admin</span><i
-                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                            <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-
-                                <li><a href="admin-category.html"><i class="ri-function-line"></i>Category</a></li>
-                                <li><a href="admin-singer.html"><i class="las la-microphone-alt"></i>Singer</a></li>
-                                <li><a href="admin-song.html"><i class="las la-play-circle"></i>Music</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="active active-menu">
-                            <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse"
-                                aria-expanded="true"><span class="ripple rippleEffect"></span><i
-                                    class="las la-user-tie iq-arrow-left"></i><span>User</span><i
-                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                            <ul id="userinfo" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle"
-                                style="">
-                                <li><a href="index.html"><i class="las la-id-card-alt"></i>User
-                                        Profile</a></li>
-                                <li class="active"><a href="playlist.html"><i class="las la-file-audio"></i>PlayList</a>
-                                </li>
-                                <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                                <li class="ifAdmin"><a href="add-user.html"><i class="las la-plus-circle"></i>User
-                                        Add</a></li>
-                                <li class="ifAdmin"><a href="user-list.html"><i class="las la-th-list"></i>User List</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+          </a>
+          <div class="iq-menu-bt-sidebar">
+            <div class="iq-menu-bt align-self-center">
+              <div class="wrapper-menu">
+                <div class="main-circle"><i class="las la-bars"></i></div>
+              </div>
             </div>
-            <button style="font-size: 16px" type="button" class="btn btn-danger ml-5 w-50 text-center"
-                onclick="logout()">
-                <i style="font-size: 25px; margin-top: 3px" class="las la-sign-out-alt"></i>LOGOUT
-            </button>
-            <script src="js/Logout.js"></script>
+          </div>
         </div>
-        <!-- end nav -->
+        <div id="sidebar-scrollbar">
+          <nav class="iq-sidebar-menu">
+            <ul id="iq-sidebar-toggle" class="iq-menu">
+              <li class="ifAdmin">
+                <a
+                  href="#admin"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="admin"
+                  class="iq-submenu collapse"
+                  data-parent="#iq-sidebar-toggle"
+                >
+                  <li>
+                    <a href="admin-category.html"
+                      ><i class="ri-function-line"></i>Category</a
+                    >
+                  </li>
+                  <li>
+                    <a href="admin-singer.html"
+                      ><i class="las la-microphone-alt"></i>Singer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="admin-song.html"
+                      ><i class="las la-play-circle"></i>Music</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
+              <li class="active active-menu">
+                <a
+                  href="#userinfo"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="true"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="las la-user-tie iq-arrow-left"></i><span>User</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="userinfo"
+                  class="iq-submenu collapse show"
+                  data-parent="#iq-sidebar-toggle"
+                  style=""
+                >
+                  <li>
+                    <a href="index.html"
+                      ><i class="las la-id-card-alt"></i>User Profile</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="playlist.html"
+                      ><i class="las la-file-audio"></i>PlayList</a
+                    >
+                  </li>
+                  <li>
+                    <a href="profile-edit.html"
+                      ><i class="las la-edit"></i>User Edit</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="add-user.html"
+                      ><i class="las la-plus-circle"></i>User Add</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="user-list.html"
+                      ><i class="las la-th-list"></i>User List</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <button
+          style="font-size: 16px"
+          type="button"
+          class="btn btn-danger ml-5 w-50 text-center"
+          onclick="logout()"
+        >
+          <i
+            style="font-size: 25px; margin-top: 3px"
+            class="las la-sign-out-alt"
+          ></i
+          >LOGOUT
+        </button>
+        <script src="js/Logout.js"></script>
+      </div>
+      <!-- end nav -->
 
-        <div id="content-page" class="content-page">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="iq-card">
-                            <div class="iq-card-header d-flex justify-content-between">
+      <div id="content-page" class="content-page">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="card mb-0 bg-soft-secondary">
+                        <img
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQswCD8IfscLGyPG7aexFWVRbNJpzH-iHK0Uw&usqp=CAU"
+                          class="img-fluid w-100"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div
+                        class="d-flex align-items-top justify-content-between"
+                      >
+                        <div class="music-detail">
+                          <h3 class="mb-3" id="pname">
+                            Eliana D’cruz Playlist
+                          </h3>
+                          <p class="mb-3" id="pdes">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. <br />when an unknown printer
+                            took a galley of type and scrambled
+                          </p>
+                          <div class="d-flex align-items-center mb-4">
+                            <h6
+                              class="ps-3 fw-bold me-3 border-start ml-4 mr-4"
+                            >
+                              <b id="pcount">15 Tracks</b>
+                            </h6>
+                          </div>
 
+                          <div class="d-flex align-items-center">
+                            <button class="btn btn-primary mr-2">
+                              Play music
+                            </button>
+                            <button class="btn btn-outline-secondary ms-3">
+                              Edit
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-card-body">
+                  <div class="table-responsive">
+                    <table
+                      class="data-tables table table-striped table-bordered"
+                      style="width: 100%"
+                    >
+                      <thead>
+                        <tr>
+                          <th style="width: 5%">No</th>
+                          <th style="width: 20%">Title</th>
+                          <th style="width: 20%">Artist</th>
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody">
+                        <tr>
+                          <td>1</td>
+                          <td class="d-flex text-center">
+                            <img
+                              src="images/dashboard/popular-hindi-song/01.png"
+                              class="img-fluid avatar-50 rounded"
+                              alt="author-profile"
+                            />
+                            <p class="ml-2 mt-2" id="songname">
+                              em của ngày hôm wua
+                            </p>
+                          </td>
+                          <td id="songArtist">DJ Khaled Featuring</td>
 
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="card mb-0 bg-soft-secondary">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQswCD8IfscLGyPG7aexFWVRbNJpzH-iHK0Uw&usqp=CAU"
-                                                class="img-fluid w-100" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div class="music-detail">
-                                                <h3 class="mb-3" id="pname">Eliana D’cruz Playlist</h3>
-                                                <p class="mb-3" id="pdes">Lorem Ipsum is simply dummy text of the
-                                                    printing and
-                                                    typesetting industry. <br>when an
-                                                    unknown printer took a galley of type and scrambled</p>
-                                                <div class="d-flex align-items-center mb-4">
-                                                    <h6 class="ps-3 fw-bold me-3 border-start ml-4 mr-4">
-                                                        <b id="pcount">15
-                                                            Tracks</b>
-                                                    </h6>
-                                                </div>
-
-                                                <div class="d-flex align-items-center">
-                                                    <button class="btn btn-primary mr-2">Play music</button>
-                                                    <button class="btn btn-outline-secondary ms-3">Edit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="iq-card-body">
-                                <div class="table-responsive">
-                                    <table class="data-tables table table-striped table-bordered" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 5%;">No</th>
-                                                <th style="width: 20%;">Title</th>
-                                                <th style="width: 20%;">Artist</th>
-                                                <th style="width: 10%;">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tbody">
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="d-flex text-center">
-                                                    <img src="images/dashboard/popular-hindi-song/01.png"
-                                                        class="img-fluid avatar-50 rounded" alt="author-profile">
-                                                    <p class="ml-2 mt-2" id="songname">em của ngày hôm wua</p>
-                                                </td>
-                                                <td id="songArtist">DJ Khaled Featuring</td>
-
-                                                <td>
-                                                    <div class="flex align-items-center list-user-action">
-                                                        <!-- <a class="bg-primary" data-toggle="tooltip" data-placement="top"
+                          <td>
+                            <div
+                              class="flex align-items-center list-user-action"
+                            >
+                              <!-- <a class="bg-primary" data-toggle="tooltip" data-placement="top"
                                                             title="" data-original-title="Edit"
                                                             href="admin-add-category.html"><i
                                                                 class="ri-pencil-line"></i></a> -->
-                                                        <a class="bg-primary" data-toggle="tooltip" data-placement="top"
-                                                            title="" data-original-title="Delete" href="#"><i
-                                                                class="ri-delete-bin-line"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                              <a
+                                class="bg-primary"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Delete"
+                                href="#"
+                                ><i class="ri-delete-bin-line"></i
+                              ></a>
                             </div>
-                        </div>
-                    </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const playlist_id = urlParams.get('id');
-        let totalTracks;
-        fetch('http://127.0.0.1:8000/api/playlist/get', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ id: playlist_id })
-        }).then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                console.log('can not cook');
-            }
-        }).then(data => {
-            document.getElementById('pname').innerHTML = data.name;
-            document.getElementById('pdes').innerHTML = data.description;
+      const urlParams = new URLSearchParams(window.location.search);
+      const playlist_id = urlParams.get("id");
+      let totalTracks;
+      fetch("http://127.0.0.1:8000/api/playlist/get", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: playlist_id }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            console.log("can not cook");
+          }
+        })
+        .then((data) => {
+          document.getElementById("pname").innerHTML = data.name;
+          document.getElementById("pdes").innerHTML = data.description;
         });
-        function fetchData() {
-            fetch('http://127.0.0.1:8000/api/song/playlist/get', {
-                method: 'POST',
-                headers: {
-                    'Content_Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    playlist_id: playlist_id
-                })
-            }).then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    console.log('can not cook');
-                }
-            }).then(({ list, count }) => {
-                totalTracks = count;
-                document.getElementById('pcount').innerHTML = `${totalTracks} tracks`;
-                const tbody = document.getElementById('tbody');
-                tbody.innerHTML = "";
-                let num = 1;
-                list.forEach(song => {
-                    const row = `
+      function fetchData() {
+        fetch("http://127.0.0.1:8000/api/song/playlist/get", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            playlist_id: playlist_id,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.log("can not cook");
+            }
+          })
+          .then(({ list, count }) => {
+            totalTracks = count;
+            document.getElementById(
+              "pcount"
+            ).innerHTML = `${totalTracks} tracks`;
+            const tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+            let num = 1;
+            list.forEach((song) => {
+              const row = `
                         <tr>
                             <td>${num}</td>
                             <td class="d-flex text-center">
@@ -235,12 +324,12 @@
                             </td>
                         </tr>
                     `;
-                    tbody.innerHTML += row;
-                    numm++;
-                });
+              tbody.innerHTML += row;
+              numm++;
             });
-        }
-        fetchData();
+          });
+      }
+      fetchData();
     </script>
     <script src="js/checkAdmin.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -289,6 +378,5 @@
     <script src="js/music-player-dashboard.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/custom.js"></script>
-</body>
-
+  </body>
 </html>

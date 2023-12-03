@@ -27,7 +27,50 @@
   <script src="./Admin/js/loginTrue.js"></script>
   <script src="js/search-bar.js"></script>
   <style>
+    /* CSS cho avatar box */
+    .avatar-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
 
+    .avatar-box img {
+      width: 30px;
+      /* Độ rộng của ảnh avatar */
+      height: 30px;
+      /* Chiều cao của ảnh avatar */
+      border-radius: 50%;
+      /* Bo tròn ảnh */
+      margin-right: 8px;
+      /* Khoảng cách giữa ảnh và dropdown icon */
+    }
+
+    /* CSS cho dropdown box */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 120px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      margin-top: 200px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
   </style>
 
 </head>
@@ -36,11 +79,11 @@
   <!-- header -->
   <div class="row header text-light" style="height: 55px;">
     <div class="col-3 header-logo">
-      <a href=""><img style="height: 50px; width:200px;" src="images/1.jpg" alt="logo header"></a>
+      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg" alt="logo header"></a>
     </div>
     <div class="col d-flex center header-search">
       <input id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
-      <button class="mr-2"><i class='bx bx-search' onclick="Search()"></i></button>
+      <button class="mr-2"><i class='bx bx-search'></i></button>
     </div>
     <div class="col-3 d-flex center" id="avatarFrame">
       <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
@@ -48,6 +91,7 @@
       <a class="ml-2" href="./Login/?#">Đăng Kí</a>
     </div>
   </div>
+  
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -57,26 +101,20 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-3">
         <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
+          <a class="nav-link  text-white" href="bxh.html" id="navbarDropdownMenuLink">
             Bảng Xếp Hạng
           </a>
         </li>
         <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
-            Bảng Xếp Hạng
+          <a class="nav-link  text-white" href="artist.html" id="navbarDropdownMenuLink">
+            Ca Sĩ 
           </a>
         </li>
         <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
-            Bảng Xếp Hạng
+          <a class="nav-link  text-white" href="album.html" id="navbarDropdownMenuLink">
+            Thể loại
           </a>
-        </li>
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
-            Bảng Xếp Hạng
-          </a>
-        </li>
-
+        </li>        
       </ul>
     </div>
   </nav>
@@ -171,9 +209,6 @@
             <a href="#">Khi ta say</a>
           </div>
         </div>
-
-
-
         <!-- Bài Hát Mới Phát Hành -->
         <div>
           <div class="d-flex mt-2 mb-2">
