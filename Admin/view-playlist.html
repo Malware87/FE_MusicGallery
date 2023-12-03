@@ -258,27 +258,30 @@
     </div>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const playlist_id = urlParams.get("id");
-      let totalTracks;
-      fetch("http://127.0.0.1:8000/api/playlist/get", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: playlist_id }),
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            console.log("can not cook");
-          }
+      let playlist_id;
+      function getPlaylist() {
+        playlist_id = urlParams.get("id");
+        let totalTracks;
+        fetch("http://127.0.0.1:8000/api/playlist/get", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: playlist_id }),
         })
-        .then((data) => {
-          document.getElementById("pname").innerHTML = data.name;
-          document.getElementById("pdes").innerHTML = data.description;
-        });
-      function fetchData() {
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.log("can not cook");
+            }
+          })
+          .then((data) => {
+            document.getElementById("pname").innerHTML = data.name;
+            document.getElementById("pdes").innerHTML = data.description;
+          });
+      }
+      function getSong() {
         fetch("http://127.0.0.1:8000/api/song/playlist/get", {
           method: "POST",
           headers: {
@@ -325,9 +328,13 @@
                         </tr>
                     `;
               tbody.innerHTML += row;
-              numm++;
+              num++;
             });
           });
+      }
+      function fetchData() {
+        getPlaylist();
+        getSong();
       }
       fetchData();
     </script>
