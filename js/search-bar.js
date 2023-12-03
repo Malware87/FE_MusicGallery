@@ -1,4 +1,4 @@
 function Search() {
     const entry = document.getElementById('search-input').value;
-    window.location.href = "search.html?entry=" + entry;
+    window.location.href = "search.html?q=" + entry;
 }

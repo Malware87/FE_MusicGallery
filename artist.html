@@ -23,6 +23,7 @@
   <!-- link css -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="Nam.css">
+  <script src="js/search-bar.js"></script>
   <script src="./Admin/js/loginTrue.js"></script>
 </head>
 
@@ -30,11 +31,12 @@
   <!-- header -->
   <div class="row header text-light" style="height: 55px;">
     <div class="col-3 header-logo">
-      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg" alt="logo header"></a>
+      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg"
+          alt="logo header"></a>
     </div>
     <div class="col d-flex center header-search">
       <input id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
-      <button class="mr-2"><i class='bx bx-search'></i></button>
+      <button class="mr-2" onclick="Search()"><i class='bx bx-search'></i></button>
     </div>
     <div class="col-3 d-flex center" id="avatarFrame">
       <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
@@ -57,7 +59,7 @@
         </li>
         <li class="nav-item dropdown ml-3">
           <a class="nav-link  text-white" href="artist.html" id="navbarDropdownMenuLink">
-            Ca Sĩ 
+            Ca Sĩ
           </a>
         </li>
         <li class="nav-item dropdown ml-3">
@@ -65,24 +67,24 @@
             Thể loại
           </a>
         </li>
-        
+
       </ul>
     </div>
   </nav>
-   <!-- Nội dung -->
-<div id="content" class="artist">
-  <div class="wrapper" id="main-body">
-    <div class="artist-title-box">
-      <h2 class="artist-name" style="padding-left:30px "><a href="#">Nghệ Sĩ</a></h2>
+  <!-- Nội dung -->
+  <div id="content" class="artist">
+    <div class="wrapper" id="main-body">
+      <div class="artist-title-box">
+        <h2 class="artist-name" style="padding-left:30px "><a href="#">Nghệ Sĩ</a></h2>
+      </div>
     </div>
-  </div>
-  <div class="artist-list">
-    <div class="content-box">
-      <ul class="list-playlist" id="artist-list"></ul>
+    <div class="artist-list">
+      <div class="content-box">
+        <ul class="list-playlist" id="artist-list"></ul>
+      </div>
     </div>
+    <ul class="pagination" id="pagination"></ul>
   </div>
-  <ul class="pagination" id="pagination"></ul>
-</div>
 
   <script>
 

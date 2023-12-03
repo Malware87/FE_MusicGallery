@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="./Admin/js/loginTrue.js"></script>
   <script src="js/search-bar.js"></script>
+  <script src="js/index.js"></script>
   <style>
     /* CSS cho avatar box */
     .avatar-box {
@@ -79,11 +80,12 @@
   <!-- header -->
   <div class="row header text-light" style="height: 55px;">
     <div class="col-3 header-logo">
-      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg" alt="logo header"></a>
+      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg"
+          alt="logo header"></a>
     </div>
     <div class="col d-flex center header-search">
       <input id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
-      <button class="mr-2"><i class='bx bx-search'></i></button>
+      <button class="mr-2" onclick="Search()"><i class='bx bx-search'></i></button>
     </div>
     <div class="col-3 d-flex center" id="avatarFrame">
       <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
@@ -91,7 +93,7 @@
       <a class="ml-2" href="./Login/?#">Đăng Kí</a>
     </div>
   </div>
-  
+
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -107,14 +109,14 @@
         </li>
         <li class="nav-item dropdown ml-3">
           <a class="nav-link  text-white" href="artist.html" id="navbarDropdownMenuLink">
-            Ca Sĩ 
+            Ca Sĩ
           </a>
         </li>
         <li class="nav-item dropdown ml-3">
           <a class="nav-link  text-white" href="album.html" id="navbarDropdownMenuLink">
             Thể loại
           </a>
-        </li>        
+        </li>
       </ul>
     </div>
   </nav>
