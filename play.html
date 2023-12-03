@@ -418,6 +418,7 @@
       let songID;
       const urlParams = new URLSearchParams(window.location.search);
       songID = urlParams.get("id");
+      playlistID = urlParams.get("id");
       function getRandomSingers() {
         // Fetch dữ liệu từ API
         fetch("http://127.0.0.1:8000/api/singer", {
