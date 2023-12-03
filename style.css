@@ -1,32 +1,38 @@
-
 * body {
     margin: 0;
     padding: 0;
 
-    font-family: Arial, sans-serif;}
+    font-family: Arial, sans-serif;
+}
+
 a {
     /* color: white; */
     color: black;
 }
+
 a:hover {
     color: aquamarine;
 }
 
 /* Header */
 
-.center{
+.center {
     align-items: center;
     justify-content: center;
 }
+
 input:focus {
     outline: none;
 }
+
 .header {
     background-color: rgb(0, 0, 0);
 }
+
 .header a {
     color: white;
 }
+
 .header-search input {
     /* width: 380px; */
     width: 25em;
@@ -36,6 +42,7 @@ input:focus {
     border-end-start-radius: 25px;
     border-start-start-radius: 25px;
 }
+
 .header-search button {
     width: 40px;
     height: 35px;
@@ -48,8 +55,8 @@ input:focus {
 
 /* ===============Footer================ */
 .footer_list li a {
- color: white;
- text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -67,45 +74,48 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-     
-   }
-   .play img {
-     height: 200px;
-     width: 100%;
-     position: relative;
-     
-     
-   }
-   .play p {
-     height: 200px;
-     width: 90%;
-     font-size: 60px;
-     position: absolute;
-     color: white;
-     margin: 0;
-     display: none;
-   }
-   
-   .play:hover p{
-     
-     background-color: rgba(0, 0,0,0.3);
-     display: block;
-     display: flex;
-     justify-content: center;
+
+
+}
+
+.play img {
+    height: 200px;
+    width: 100%;
+    position: relative;
+
+
+}
+
+.play p {
+    height: 200px;
+    width: 90%;
+    font-size: 60px;
+    position: absolute;
+    color: white;
+    margin: 0;
+    display: none;
+}
+
+.play:hover p {
+
+    background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    display: flex;
+    justify-content: center;
     align-items: center;
-   }
+}
 
 
 /* Bài Hát Mới */
 
-   .newsongtext {
+.newsongtext {
     width: 100%;
-   }
-   .newsong img {
+}
+
+.newsong img {
     height: 60px;
     width: 100px;
-   }
+}
 
 
 /* atis detail */
@@ -113,6 +123,7 @@ input:focus {
     width: 100%;
     height: 300px;
 }
+
 /* dialog playlist */
 .dialog {
     display: none;
@@ -129,39 +140,245 @@ input:focus {
     margin-bottom: 10px;
 }
 
+/* CSS cho avatar box */
+.avatar-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
 
+.avatar-box img {
+    width: 30px;
+    /* Độ rộng của ảnh avatar */
+    height: 30px;
+    /* Chiều cao của ảnh avatar */
+    border-radius: 50%;
+    /* Bo tròn ảnh */
+    margin-right: 8px;
+    /* Khoảng cách giữa ảnh và dropdown icon */
+}
 
+/* CSS cho dropdown box */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 200px;
+}
 
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-   
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.player {
+    max-width: 100%;
+    background-color: #1E2125;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cover img {
+    max-height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.info h1,
+.info h2,
+.info h4 {
+    color: white;
+}
+
+.info h1 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.info h4 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #636367;
+}
+
+.info h2 {
+
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.button-items {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#slider {
+    width: 350px;
+    height: 4px;
+    background: #151518;
+    border-radius: 2px;
+}
+
+#slider div {
+    width: 4px;
+    height: 4px;
+    background: #EF6DBC;
+    border-radius: 2px;
+}
+
+#timer {
+    color: #494B4E;
+    font-size: 9pt;
+    float: right;
+    font-family: Arial, Sans-Serif;
+    margin-top: 5px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+#play,
+.step-backward,
+.step-foreward,
+#pause {
+    width: 30px;
+    height: 30px;
+    fill: #FEFEFE;
+    cursor: pointer;
+}
+
+#play:hover,
+.step-backward:hover,
+.step-foreward:hover,
+#pause:hover {
+    fill: #8F4DA9;
+}
+
+.step-backward,
+.step-foreward {
+    margin-left: 5px;
+}
+
+#pause {
+    position: absolute;
+    margin-left: -38px;
+}
+
+.social {
+    text-align: center;
+}
+
+.twitter,
+.github {
+    color: #BDBDBD;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.twitter:hover,
+.github:hover {
+    color: #ecf0f1;
+}
+
+p {
+    color: #BDBDBD;
+}
+
+#skip p {
+    color: #2980b9;
+    cursor: pointer;
+}
+
+#skip p:hover {
+    color: #e74c3c;
+}
+
+.expend {
+    padding: 0.5px;
+    cursor: pointer;
+}
+
+.expend svg:hover g polygon {
+    fill: #EF6DBC;
+}
+
+.iconplayleft li {
+    list-style: none;
+    font-size: 25px;
+    margin: 5px;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.dialog-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.topcontent-list-widget-right {
+    display: none;
+}
 
 
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .header-search input{
+    .header-search input {
         width: 100px;
         display: none;
     }
-    .header-search button:hover + #search-input {
+
+    .header-search button:hover+#search-input {
         display: block;
     }
-    
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-   
-}
+@media only screen and (min-width: 768px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    
-
-}
+@media only screen and (min-width: 1200px) {}

@@ -214,13 +214,11 @@
                 const tbody = document.getElementById('tbody');
                 tbody.innerHTML = "";
                 let num = 1;
-                list.foreach(song => {
+                list.forEach(song => {
                     const row = `
                         <tr>
                             <td>${num}</td>
                             <td class="d-flex text-center">
-                                <img src="images/dashboard/popular-hindi-song/01.png"
-                                    class="img-fluid avatar-50 rounded" alt="author-profile">
                                 <p class="ml-2 mt-2" id="songname">${song.song_name}</p>
                             </td>
                             <td id="songArtist">${song.singer_name}<
