@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -41,228 +41,302 @@
           <div class="iq-menu-bt align-self-center">
             <div class="wrapper-menu">
               <div class="main-circle"><i class="las la-bars"></i></div>
+
             </div>
           </div>
         </div>
+        <div id="sidebar-scrollbar">
+          <nav class="iq-sidebar-menu">
+            <ul id="iq-sidebar-toggle" class="iq-menu">
+              <li class="active" class="ifAdmin">
+                <a
+                  href="#admin"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="true"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="admin"
+                  class="iq-submenu collapse show"
+                  data-parent="#iq-sidebar-toggle"
+                >
+                  <li>
+                    <a href="admin-category.html"
+                      ><i class="ri-function-line"></i>Category</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="admin-singer.html"
+                      ><i class="las la-microphone-alt"></i>Singer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="admin-song.html"
+                      ><i class="las la-play-circle"></i>Music</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a
+                  href="#userinfo"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="las la-user-tie iq-arrow-left"></i><span>User</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="userinfo"
+                  class="iq-submenu collapse"
+                  data-parent="#iq-sidebar-toggle"
+                  style=""
+                >
+                  <li>
+                    <a href="index.html"
+                      ><i class="las la-id-card-alt"></i>User Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a href="playlist.html"
+                      ><i class="las la-file-audio"></i>PlayList</a
+                    >
+                  </li>
+                  <li>
+                    <a href="profile-edit.html"
+                      ><i class="las la-edit"></i>User Edit</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="add-user.html"
+                      ><i class="las la-plus-circle"></i>User Add</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="user-list.html"
+                      ><i class="las la-th-list"></i>User List</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <button
+          style="font-size: 16px"
+          type="button"
+          class="btn btn-danger ml-5 w-50 text-center"
+          onclick="logout()"
+        >
+          <i
+            style="font-size: 25px; margin-top: 3px"
+            class="las la-sign-out-alt"
+          ></i
+          >LOGOUT
+        </button>
+        <script src="js/Logout.js"></script>
       </div>
-      <div id="sidebar-scrollbar">
-        <nav class="iq-sidebar-menu">
-          <ul id="iq-sidebar-toggle" class="iq-menu">
-            <li class="active" class="ifAdmin">
-              <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                  class="ripple rippleEffect"></span><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span><i
-                  class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-              <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                <li>
-                  <a href="admin-category.html"><i class="ri-function-line"></i>Category</a>
-                </li>
-                <li class="active">
-                  <a href="admin-singer.html"><i class="las la-microphone-alt"></i>Singer</a>
-                </li>
-                <li>
-                  <a href="admin-song.html"><i class="las la-play-circle"></i>Music</a>
-                </li>
-              </ul>
-            </li>
 
-            <li>
-              <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
-                  class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i
-                  class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-              <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                <li>
-                  <a href="index.html"><i class="las la-id-card-alt"></i>User Profile</a>
-                </li>
-                <li>
-                  <a href="playlist.html"><i class="las la-file-audio"></i>PlayList</a>
-                </li>
-                <li>
-                  <a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a>
-                </li>
-                <li class="ifAdmin">
-                  <a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a>
-                </li>
-                <li class="ifAdmin">
-                  <a href="user-list.html"><i class="las la-th-list"></i>User List</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <button style="font-size: 16px" type="button" class="btn btn-danger ml-5 w-50 text-center" onclick="logout()">
-        <i style="font-size: 25px; margin-top: 3px" class="las la-sign-out-alt"></i>LOGOUT
-      </button>
-      <script src="js/Logout.js"></script>
-    </div>
-
-    <!-- TOP Nav Bar END -->
-    <!-- Page Content  -->
-    <div id="content-page" class="content-page">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="iq-card">
-              <div class="iq-card-header d-flex justify-content-between">
-                <div class="iq-header-title">
-                  <h4 class="card-title">Singer Lists</h4>
+      <!-- TOP Nav Bar END -->
+      <!-- Page Content  -->
+      <div id="content-page" class="content-page">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                    <h4 class="card-title">Singer Lists</h4>
+                  </div>
+                  <div class="iq-card-header-toolbar d-flex align-items-center">
+                    <a href="admin-singer-add.html" class="btn btn-primary"
+                      >Add New Singer</a
+                    >
+                  </div>
                 </div>
-                <div class="iq-card-header-toolbar d-flex align-items-center">
-                  <a href="admin-singer-add.html" class="btn btn-primary">Add New Singer</a>
-                </div>
-              </div>
-              <div class="iq-card-body">
-                <div class="table-responsive">
-                  <table id="singer-list-table" class="table table-striped table-bordered" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th style="width: 5%">Profile</th>
-                        <th style="width: 20%">Singer Name</th>
-                        <th style="width: 50%">Singer Description</th>
-                        <th style="width: 10%">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                  <script>
-                    let currentPage = 1;
-                    const usersPerPage = 10;
-                    let totalRecords = 0;
-                    // Hàm để lấy dữ liệu từ API
-                    function fetchData() {
-                      const start = (currentPage - 1) * usersPerPage;
-                      const end = start + usersPerPage;
-                      const requestBody = {
-                        start: start,
-                      };
+                <div class="iq-card-body">
+                  <div class="table-responsive">
+                    <table
+                      id="singer-list-table"
+                      class="table table-striped table-bordered"
+                      style="width: 100%"
+                    >
+                      <thead>
+                        <tr>
+                          <th style="width: 5%">Profile</th>
+                          <th style="width: 20%">Singer Name</th>
+                          <th style="width: 50%">Singer Description</th>
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                    <script>
+                      let currentPage = 1;
+                      const usersPerPage = 10;
+                      let totalRecords = 0;
+                      // Hàm để lấy dữ liệu từ API
+                      function fetchData() {
+                        const start = (currentPage - 1) * usersPerPage;
+                        const end = start + usersPerPage;
+                        const requestBody = {
+                          start: start,
+                        };
 
-                      fetch("http://127.0.0.1:8000/api/singer", {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(requestBody),
-                      })
-                        .then((response) => response.json())
-                        .then(({ records, singer }) => {
-                          totalRecords = records;
-                          updateTable(singer);
-                          updatePagination();
+                        fetch("http://127.0.0.1:8000/api/singer", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(requestBody),
                         })
+                          .then((response) => response.json())
+                          .then(({ records, singer }) => {
+                            totalRecords = records;
+                            updateTable(singer);
+                            updatePagination();
+                          })
 
-                        .catch((error) => {
-                          console.error("Error fetching data:", error);
-                        });
-                    }
-                    function updatePagination() {
-                      const paginationContainer =
-                        document.getElementById("pagination");
-                      paginationContainer.innerHTML = ""; // Clear existing pagination buttons
+                          .catch((error) => {
+                            console.error("Error fetching data:", error);
+                          });
+                      }
+                      function updatePagination() {
+                        const paginationContainer =
+                          document.getElementById("pagination");
+                        paginationContainer.innerHTML = ""; // Clear existing pagination buttons
 
-                      let totalPages = Math.ceil(totalRecords / usersPerPage);
-                      if (totalPages > 1) {
-                        // Add Previous button
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === 1 ? "disabled" : ""
+                        let totalPages = Math.ceil(totalRecords / usersPerPage);
+                        if (totalPages > 1) {
+                          // Add Previous button
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === 1 ? "disabled" : ""
                           }">
                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="previousPage()">Previous</a>
                                                </li>`;
 
-                        // Add first page button
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === 1 ? "active" : ""
+                          // Add first page button
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === 1 ? "active" : ""
                           }">
                                                    <a class="page-link" href="#" onclick="goToPage(1)">1</a>
                                                </li>`;
 
-                        // Add dots if needed
-                        if (currentPage > 3) {
-                          paginationContainer.innerHTML += `<li class="page-item disabled">
+                          // Add dots if needed
+                          if (currentPage > 3) {
+                            paginationContainer.innerHTML += `<li class="page-item disabled">
                                                        <a class="page-link" href="#">...</a>
                                                    </li>`;
-                        }
+                          }
 
-                        // Add pages dynamically
-                        for (
-                          let i = Math.max(2, currentPage - 2);
-                          i <= Math.min(totalPages - 1, currentPage + 2);
-                          i++
-                        ) {
-                          paginationContainer.innerHTML += `<li class="page-item ${currentPage === i ? "active" : ""
+                          // Add pages dynamically
+                          for (
+                            let i = Math.max(2, currentPage - 2);
+                            i <= Math.min(totalPages - 1, currentPage + 2);
+                            i++
+                          ) {
+                            paginationContainer.innerHTML += `<li class="page-item ${
+                              currentPage === i ? "active" : ""
                             }" id="page${i}">
                                                        <a class="page-link" href="#" onclick="goToPage(${i})">${i}</a>
                                                    </li>`;
-                        }
+                          }
 
-                        // Add dots if needed
-                        if (currentPage < totalPages - 2) {
-                          paginationContainer.innerHTML += `<li class="page-item disabled">
+                          // Add dots if needed
+                          if (currentPage < totalPages - 2) {
+                            paginationContainer.innerHTML += `<li class="page-item disabled">
                                                        <a class="page-link" href="#">...</a>
                                                    </li>`;
-                        }
+                          }
 
-                        // Add last page button
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === totalPages ? "active" : ""
+                          // Add last page button
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === totalPages ? "active" : ""
                           }" id="page${totalPages}">
                                                    <a class="page-link" href="#" onclick="goToPage(${totalPages})">${totalPages}</a>
                                                </li>`;
 
-                        // Add Next button
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === totalPages ? "disabled" : ""
+                          // Add Next button
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === totalPages ? "disabled" : ""
                           }" id="nextPage">
                                                    <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                                </li>`;
-                      } else {
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === 1 ? "disabled" : ""
+                        } else {
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === 1 ? "disabled" : ""
                           }">
                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="previousPage()">Previous</a>
                                                </li>`;
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === 1 ? "active" : ""
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === 1 ? "active" : ""
                           }">
                                                    <a class="page-link" href="#" onclick="goToPage(1)">1</a>
                                                </li>`;
-                        paginationContainer.innerHTML += `<li class="page-item ${currentPage === totalPages ? "disabled" : ""
+                          paginationContainer.innerHTML += `<li class="page-item ${
+                            currentPage === totalPages ? "disabled" : ""
                           }" id="nextPage">
                                                    <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                                </li>`;
+                        }
                       }
-                    }
-                    function deleteSinger(id) {
-                      const requestBody = {
-                        id: id,
-                      };
-                      fetch(`http://127.0.0.1:8000/api/singer`, {
-                        method: "DELETE",
-                        headers: {
-                          "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(requestBody),
-                      })
-                        .then((response) => {
-                          if (!response.ok) {
-                            throw new Error("Xóa không thành công");
-                          }
-                          return response.json();
+                      function nextPage() {
+                        currentPage++;
+                        fetchData();
+                      }
+                      function previousPage() {
+                        if (currentPage > 1) {
+                          currentPage--;
+                          fetchData();
+                        }
+                      }
+                      function goToPage(page) {
+                        currentPage = page;
+                        fetchData();
+                      }
+                      function deleteSinger(id) {
+                        const requestBody = {
+                          id: id,
+                        };
+                        fetch(`http://127.0.0.1:8000/api/singer`, {
+                          method: "DELETE",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(requestBody),
                         })
-                        .then((data) => {
-                          console.log("Xóa thành công:", data);
-                          showPopup("SuccessPopup");
-                        })
-                        .catch((error) => {
-                          console.error("Lỗi xóa:", error.message);
-                          showPopup("FailedPopup");
-                        });
-                      fetchData();
-                    }
-                    function updateTable(data) {
-                      const tableBody = document.querySelector(
-                        "#singer-list-table tbody"
-                      );
-                      // Xóa dữ liệu cũ từ bảng
-                      tableBody.innerHTML = "";
-                      // Duyệt qua dữ liệu và thêm mỗi dòng vào bảng
-                      data.forEach((singer) => {
-                        const url =
-                          "http://127.0.0.1:8000" + singer.urlAvatar;
-                        const row = `
+                          .then((response) => {
+                            if (!response.ok) {
+                              throw new Error("Xóa không thành công");
+                            }
+                            return response.json();
+                          })
+                          .then((data) => {
+                            console.log("Xóa thành công:", data);
+                            showPopup("SuccessPopup");
+                          })
+                          .catch((error) => {
+                            console.error("Lỗi xóa:", error.message);
+                            showPopup("FailedPopup");
+                          });
+                        fetchData();
+                      }
+                      function updateTable(data) {
+                        const tableBody = document.querySelector(
+                          "#singer-list-table tbody"
+                        );
+                        // Xóa dữ liệu cũ từ bảng
+                        tableBody.innerHTML = "";
+                        // Duyệt qua dữ liệu và thêm mỗi dòng vào bảng
+                        data.forEach((singer) => {
+                          const url =
+                            "http://127.0.0.1:8000" + singer.urlAvatar;
+                          const row = `
                                 <tr>
                                     <td class="text-center"><img class="rounded img-fluid avatar-40" src="${url}" alt="profile"></td>
                                     <td>${singer.name}</td>
@@ -275,43 +349,33 @@
                                     </td>
                                 </tr>
                             `;
-                        tableBody.innerHTML += row;
-                      });
-                    }
-                    function nextPage() {
-                      currentPage++;
-                      fetchData();
-                    }
-                    function previousPage() {
-                      if (currentPage > 1) {
-                        currentPage--;
-                        fetchData();
+                          tableBody.innerHTML += row;
+                        });
                       }
-                    }
-                    function goToPage(page) {
-                      currentPage = page;
+                      function showPopup(popupId) {
+                        const popup = document.getElementById(popupId);
+                        popup.style.display = "block";
+                        // Ẩn popup sau 3 giây
+                        setTimeout(() => {
+                          popup.style.display = "none";
+                        }, 3000);
+                      }
+                      // Gọi fetchData() khi trang được tải
                       fetchData();
-                    }
-                    function showPopup(popupId) {
-                      const popup = document.getElementById(popupId);
-                      popup.style.display = "block";
-                      // Ẩn popup sau 3 giây
-                      setTimeout(() => {
-                        popup.style.display = "none";
-                      }, 3000);
-                    }
-                    // Gọi fetchData() khi trang được tải
-                    fetchData();
-                  </script>
-                </div>
-                <div class="row justify-content-between mt-3">
-                  <div id="user-list-page-info" class="col-md-6">
-                    <span>Showing 1 to 5 of 5 entries</span>
+                    </script>
                   </div>
-                  <div class="col-md-6">
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination justify-content-end mb-0" id="pagination"></ul>
-                    </nav>
+                  <div class="row justify-content-between mt-3">
+                    <div id="user-list-page-info" class="col-md-6">
+                      <span>Showing 1 to 5 of 5 entries</span>
+                    </div>
+                    <div class="col-md-6">
+                      <nav aria-label="Page navigation example">
+                        <ul
+                          class="pagination justify-content-end mb-0"
+                          id="pagination"
+                        ></ul>
+                      </nav>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -320,92 +384,90 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- Pop Up -->
-  <div id="FailedPopup" class="mess-popup failed">Xóa không thành công!</div>
-  <div id="SuccessPopup" class="mess-popup success">Xóa thành công!</div>
-  <style>
-    /* CSS để định dạng popup */
-    .mess-popup {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      color: white;
-      padding: 10px;
-      display: none;
-    }
+    <!-- Pop Up -->
+    <div id="FailedPopup" class="mess-popup failed">Xóa không thành công!</div>
+    <div id="SuccessPopup" class="mess-popup success">Xóa thành công!</div>
+    <style>
+      /* CSS để định dạng popup */
+      .mess-popup {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        color: white;
+        padding: 10px;
+        display: none;
+      }
 
-    .success {
-      background-color: #4caf50;
-    }
+      .success {
+        background-color: #4caf50;
+      }
 
-    .failed {
-      background-color: #ff0000;
-    }
-  </style>
-  <!-- color-customizer END -->
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="js/checkRole.js"></script>
-  <script src="js/checkAdmin.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.dataTables.min.js"></script>
-  <script src="js/dataTables.bootstrap4.min.js"></script>
-  <!-- Appear JavaScript -->
-  <script src="js/jquery.appear.js"></script>
-  <!-- Countdown JavaScript -->
-  <script src="js/countdown.min.js"></script>
-  <!-- Counterup JavaScript -->
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <!-- Wow JavaScript -->
-  <script src="js/wow.min.js"></script>
-  <!-- Apexcharts JavaScript -->
-  <script src="js/apexcharts.js"></script>
-  <!-- Slick JavaScript -->
-  <script src="js/slick.min.js"></script>
-  <!-- Select2 JavaScript -->
-  <script src="js/select2.min.js"></script>
-  <!-- Owl Carousel JavaScript -->
-  <script src="js/owl.carousel.min.js"></script>
-  <!-- Magnific Popup JavaScript -->
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <!-- Smooth Scrollbar JavaScript -->
-  <script src="js/smooth-scrollbar.js"></script>
-  <!-- lottie JavaScript -->
-  <script src="js/lottie.js"></script>
-  <!-- am core JavaScript -->
-  <script src="js/core.js"></script>
-  <!-- am charts JavaScript -->
-  <script src="js/charts.js"></script>
-  <!-- am animated JavaScript -->
-  <script src="js/animated.js"></script>
-  <!-- am kelly JavaScript -->
-  <script src="js/kelly.js"></script>
-  <!-- am maps JavaScript -->
-  <script src="js/maps.js"></script>
-  <!-- am worldLow JavaScript -->
-  <script src="js/worldLow.js"></script>
-  <!-- Raphael-min JavaScript -->
-  <script src="js/raphael-min.js"></script>
-  <!-- Morris JavaScript -->
-  <script src="js/morris.js"></script>
-  <!-- Morris min JavaScript -->
-  <script src="js/morris.min.js"></script>
-  <!-- Flatpicker Js -->
-  <script src="js/flatpickr.js"></script>
-  <!-- Style Customizer -->
-  <script src="js/style-customizer.js"></script>
-  <!-- Chart Custom JavaScript -->
-  <script src="js/chart-custom.js"></script>
-  <!-- Music js -->
-  <script src="js/music-player.js"></script>
-  <!-- Music-player js -->
-  <script src="js/music-player-dashboard.js"></script>
-  <!-- Custom JavaScript -->
-  <script src="js/custom.js"></script>
-</body>
-
+      .failed {
+        background-color: #ff0000;
+      }
+    </style>
+    <!-- color-customizer END -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/checkRole.js"></script>
+    <script src="js/checkAdmin.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <!-- Appear JavaScript -->
+    <script src="js/jquery.appear.js"></script>
+    <!-- Countdown JavaScript -->
+    <script src="js/countdown.min.js"></script>
+    <!-- Counterup JavaScript -->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Wow JavaScript -->
+    <script src="js/wow.min.js"></script>
+    <!-- Apexcharts JavaScript -->
+    <script src="js/apexcharts.js"></script>
+    <!-- Slick JavaScript -->
+    <script src="js/slick.min.js"></script>
+    <!-- Select2 JavaScript -->
+    <script src="js/select2.min.js"></script>
+    <!-- Owl Carousel JavaScript -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup JavaScript -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
+    <script src="js/smooth-scrollbar.js"></script>
+    <!-- lottie JavaScript -->
+    <script src="js/lottie.js"></script>
+    <!-- am core JavaScript -->
+    <script src="js/core.js"></script>
+    <!-- am charts JavaScript -->
+    <script src="js/charts.js"></script>
+    <!-- am animated JavaScript -->
+    <script src="js/animated.js"></script>
+    <!-- am kelly JavaScript -->
+    <script src="js/kelly.js"></script>
+    <!-- am maps JavaScript -->
+    <script src="js/maps.js"></script>
+    <!-- am worldLow JavaScript -->
+    <script src="js/worldLow.js"></script>
+    <!-- Raphael-min JavaScript -->
+    <script src="js/raphael-min.js"></script>
+    <!-- Morris JavaScript -->
+    <script src="js/morris.js"></script>
+    <!-- Morris min JavaScript -->
+    <script src="js/morris.min.js"></script>
+    <!-- Flatpicker Js -->
+    <script src="js/flatpickr.js"></script>
+    <!-- Style Customizer -->
+    <script src="js/style-customizer.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="js/chart-custom.js"></script>
+    <!-- Music js -->
+    <script src="js/music-player.js"></script>
+    <!-- Music-player js -->
+    <script src="js/music-player-dashboard.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/custom.js"></script>
+  </body>
 </html>

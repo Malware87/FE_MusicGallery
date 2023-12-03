@@ -152,106 +152,156 @@
         }
         
     </style>
+    <script src="./Admin/js/loginTrue.js"></script>
 
 </head>
 <body>
-
-      <!-- header -->
-  <div class="row header text-light" style="height: 55px;">
-    <div class="col-3 header-logo">
-        <a href=""><img style="height: 50px; width:200px;" src="data:image/png;base64,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" alt="logo header"></a>
-    </div>
-    <div class="col d-flex center header-search">
-        <input  id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
-        <button class="mr-2"><i class='bx bx-search'></i></button>
-    </div>
-    <div class="col-3 d-flex center">
-        <a class="mr-2" href="#">Đăng Nhập</a>
-        <p class="mt-3">/</p>
-        <a class="ml-2" href="#">Đăng Kí</a>
-    </div>
+<!-- header -->
+<div class="row header text-light" style="height: 55px;">
+  <div class="col-3 header-logo">
+    <a href=""><img style="height: 50px; width:200px;"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABfVBMVEUAGCIAGCOpz0YAABwAGSIAACAAAB0AABoAAB8AFiEAABMAEiEAABYAFSIADCEAABiw10wlOyVLYTB1kz0AER0ADBsAAA8AFByNxl1ft4ZBVzMADRldtogADyAAFyRtijsmpLhmun9svHoho7wrprUwqLAeosE2qqo5rKZHr5tXtY1PspWAwmis01BedzwmpLovrLYAAAQkZWdAraByvXMuaF96v24wl58YQkl3tmyOxlygxkx9nkGIqEYADhIKNk4fbHsieYoXS1scWGIhb4QPMTsmjKMUOEgeo8QOO0kOLT4YpcggfJYZV2Mom7QglrcpUEs5d2lGk342XE5XlG9JtaAgPzRps4FQooM4g3oMIiVMiG0UMSxqpGk+bFJNf1seUlpbilVwo1pfj1hKb0g0UDouTjyAr1ZCopZmjU0wbmgSKCUdNichPzo5aldwoGFem24OJR47UC2avk9edzhCWi8PVnkJbJkORmQNi8kJkNEJdKkMpecQX40MUW4tqne+AAALdElEQVR4nO2cC1sTxxqAd7OTZGeviexmhbAbGmIUSMAoRW3IxtrS6rbeClpNEY4W6QVsLUFiQuhvPzOzu8kGre05R04yeeZ9EPYWnnn9Zr65JXAcg8FgMBgMBoPBYDAYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAz6AdmMAYZdiLMEOjc/vyUNuxRnSXZmdnbpljHsYpwZIPvFzMxS8V522AU5O7I3Z1AQZ7/McHDYRTkbUAwLKIizs2vjmm2wYQFH8avMsItyRvgxxEG8OaaKyPByoPj1eGYbkL1yGVXTJWQ4u+bywy7OGeAb4mRTLM56YxlFXEsLfjq9jSrqGEYRxfBCIaint2fvjGEUQ0McxOLt4tfj1xazVy5c8BWRYfGbomcNu0QfG2JIFGeXZouzxfvymI1tgHnlIjGcIcNTFMVvK+NVT7EhUixcu3YNJ5siUrw1XvU0iOGFSiaj3L2Hg3j7/njl0yCGFwzIwazxVRHX07vjpYgNkSKaOwGomvew4f2KM07ZxrxyCSv6s0PjDq6m36xZ42SYjRpyma9wEL8cp2rqIEOs6K9EgewtHMRvM+OyosGfNkSKOJ3eq6jDLdjHwnEgaYfEMIgaqabFMViVgqaiSKgLVJTMlatYMTTM3kQjm9uAckNgStyDh9/NzT1CXL3qGwbZM3sXD2w8qmsp1KX17+bn5xcQc3NzV33F0NC4g6ZRRZpjyNvGb/OTgeDCo75h4KSuIcN78nAL+T8A1Mz69OTk9HxEcW7AkAPIkOK1U7ux8cknk9PTRJE4Pno0R4LY25nhC0tLn9NqyCcff48EJ4niwpMfHn6KeTo3YKgWZpbuZqkctQEuuZvPE8PJ6Y31RkYxbds0pU9JOu0bzhRmaJ0CC0gQGSLHHzYlM+gPePNTUk3D3AJhoXCN0kqqPV72Db9/JfW7O2SIE2rfkLtcoHN+CORGHhvm89vSQF/gG17t59LLBSoFOSA9W17GiluSM3DjlCFcu3yTTkNha4UYbin8YJ4MDYNT486FLJUDGrWxgg2Xt5XTd4jhXN/wX1/QGEIeCM9XsOKzTL+K8uQLGS5EDa01iDsW2nAgKBHDzUiSAXZSkSSpMmgIjAyGuooqPi9hxW09vAA4W1r/4QkBzzH6Mbx+DbNGm6J+AxsuW71+UNV/m/eHpwv+LCrMpcZ1vHp6eQ3SVVONxyXM82RYbKhskOFpaLgQNbxIoWFihxi+6rVCHU8xfEN/hjEnD8SwQJth8gUWvNF7e56wlQ/mGKFi1JDGGCql88jwRyE4VRtk/P2XhkiRLkM0JD2PDXe04Dy5nT+tGGmHl5DhRdoM01iw9NIOLiivyRxjMqo4YHjxImW9hf2SxHA/SDTQCOeJUcPgWWR4iX5DkM8PBjFiaNFpeHAeUdoPLKCVfzeI5mAt9SBViqgdYsJ2CPRny70oButuT5TQ8MElHES6DHl17zNsGOZSLvl8+XQQH0rB6hPZirp00Rxaaf8bgCORGD4P+kNg7/rrGRHF3nBHenoJB5GytSg++RMO4ovAkOeUZ8vLkWQzP/1dGEIu8/NVZPiUtk8niL9gw1IjnFqoe/nBetq7A9fICvgV2ub52tRnWHEn7PKBtrscyafzr+xgBMObvxLD67S9aUgF5/1q2huKaZs4n/qGTxqhOQekn/H68M90JRoESLz4DEfxpda7ZOhbz3AUJzfWlf7ShvmALLw9fWe9atTh5Zekmt7QQW9LAmoKeLz7ylAi8YLmHNlto2xEw+Hsqf/kt0Q9sunCQ0OWB+YQykO8KjVHXSbF2AekmpbS2gceMh/4+97XqfyYl/KCBHGl8dcb2OYmmQs/ojKEqIntEcPzNyyNf8/2IOB5s7HgT/ctOt+IAcSdQHE/Ad6nqLzyp1GPHlDXVQQAnQxsUFvcUeRTjgDI0m/B1v6vp7du6EGVXhDFUun3fXGgNUJbevU6mAo/pLMR+qjJQPF86fddSbRVyAFOle2ktLsxOe3PMR5mnL//RaMLTP7i11O8ePrj1mZDtkHj8frG98FUeBoJUtfXDwBUfTE0LK2UVvxZYjg8RYLrErVtMATE99FUseQr+numgSFS3GjYtPuhgRovCzul04rE8Mm6olK4NfoOqLfX9J2fQsUgiPlPXq9nbNRpDLt4HwlHU/Z3Xqz0oph/vbWpjEEFjQA4OZE00y93tre3d3Y3FcVG4zSqe4n3AmVbSwhJTaZqZfQ/hLS7943DGQwG4+/gIewNThzI9UcqAIbzQieyAAUd2ZZ7CYcHvBp93xe6rEI4Yl2JKphi2IFDNZEVg9UnLQmD6b0mWEJvHT9upQ/SZnjOc4KViCx0qKLwxz4QNHV0RgRA/aNZbqY1f5aggma5ekDWtO2DarlJVtFkfPQHVgK8JU6UU6lUebUhEyvHrJWrU8F/EIBCerWK7jYXde19ax/DwT6XisWqWRITmKilYqkJER/Hc+gQy/JieIQeEJvoaUSqSpQ5OY1fkCA2vKxPpMLb6dEZ12nYMFUTUIfOJ3L4eCKOrxOvKWwYD4/QbOoQP4A1UlNkZcM3FImhqvv66Fs5tRofFUNADGOpQ4EHiSlyGDXEbbJvyAlNdD/38jCVqiXI6M039G2ECWxerq0i0dQbbVRGd4Ehqoaa2qjGPmwIsGFV1+LpxaASRgzV/TJ+sZwQE1PNQ2FUBHuGsSpINmN/Z5jAj+Q2FVFU/fwZMSSPrSZx5dWED+0G/J/xDau4KeISVj9sKC7iihir1s4J/mZFxFBEWaocJJhRGp8Tw9RiM8gQB6nQMN4z7OUc/Abwml+nU9XNSC4lhrgGlxXOT6ujZ5guk4Kf23/XEPRd8SLqYpXk0liTvJHhtKE0en98wDc8FEg3sKqn+4aH2DyB4pZYRUdp3L7QbF8QhfQiDmSKvCssWkvxYwcimkUCB46QaBDDhLCKap5t9w1tVGFjqJvkbRPFt+x/EFZtrOaSaK6/GgvGAFFD3KCbybjDc2LDHJ2haWCoQSOX21PlvqEj4KyT03W3htMQGec4WjOVWlXiei2MasQQavgFzSlJb+TKteQwpQYIDTk1jkbTEUMujvNmrFwt4wxEdDh1D3d5Vdylx6qkS48Ygrg/diCvwL9xROgZkvwXjSGn+3kTlzon+p2AkOtdOiRPRQx5LnEY3u2NVUcAXnuDyngu+B9X91GizPkx9MfhpGs4DD9aAgV/bI0fIs6QvCC0Sbxp+ndTq9bIzJ8ANA9ruXCn2jEXaxN7wQlQhTc1NHGaSIu9xx09PdGsokvBZzF47bC2uhduL/KacK6GbufSujwqIUQ48Xi8txXPi2LvBM3fNTGpC6LB9YvL26KgC3E56NMBiCfivf1TwKlaHN0WZX5slvwZDAaD8R4AdF3X4RwL/eAAD7JZiwf4jHc49N0CDkB38Aqxi/9x0EUPkRvDLvk/BbpHrRMVWPVWq+VxXPaoVTeAW2+duBzntVpvXYAeODIcwJ8YlneURV+8gW5Q9Fc+K+3j9rHrnnRax57sttvHx65V7+JrVr3T6r61Mp3jdtuFXjeDrp/UOyjInePjI2rezA4q7aOTdsU96hz/mUUKlYrruK3jitH13Hqn3j7KZjr1SqdueV10u9M56rjuURscH7nDLvk/BRl2uidZVOq3nit7XU/yrCxSrnd4o95tdx0L6dW7nuEbvu22M9bbjtNqV4Zd8n8KX2m//bON4tLtdD3LPel2jzMc3+52j3AtRQHOVjrdDjrxurj2Vlodk3OPO50WPX9QGHooc0AL1Ot1VGbXqxsQzT/qHkqd0LM8hzM8dAId1YNA9SzDM1Dc63W6/joGSfyWRToAy8+R5AeIHKMfuGsJrln0dBYMBoPBYDAYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGg8FgMMaafwMKigcT6DXcmAAAAABJRU5ErkJggg=="
+        alt="logo header"></a>
+  </div>
+  <div class="col d-flex center header-search">
+    <input id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
+    <button class="mr-2"><i class='bx bx-search'></i></button>
+  </div>
+  <div class="col-3 d-flex center" id="avatarFrame">
+    <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
+    <p class="mt-3">/</p>
+    <a class="ml-2" href="./Login/?#">Đăng Kí</a>
+  </div>
 </div>
+<style>
+  /* CSS cho avatar box */
+  .avatar-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
 
+  .avatar-box img {
+    width: 30px;
+    /* Độ rộng của ảnh avatar */
+    height: 30px;
+    /* Chiều cao của ảnh avatar */
+    border-radius: 50%;
+    /* Bo tròn ảnh */
+    margin-right: 8px;
+    /* Khoảng cách giữa ảnh và dropdown icon */
+  }
+
+  /* CSS cho dropdown box */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 200px;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .show {
+    display: block;
+  }
+</style>
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-3">
-        <li class="nav-item dropdown ml-3">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Chủ Đề
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        <li class="nav-item dropdown ml-3">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Bảng Xếp Hạng
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        <li class="nav-item dropdown ml-3">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Album
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Nghệ Sĩ
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-3">
+      <li class="nav-item dropdown ml-3">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Chủ Đề
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown ml-3">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Bảng Xếp Hạng
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown ml-3">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Album
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown ml-3">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Nghệ Sĩ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+<!-- Content -->
     <div class="container">
             <div class="">
                 <div class="row">
                     <div class="col-8">
                         <!-- Tiêu đề Tên Album -->
-                            <div>
+                            <!-- <div>
                                 <h3>Khi ta say</h3>
                                 <p><b>Người tạo: <a href="#">TNIT</a></b></p>
                                 <p><b>Người tạo:</b> <a href="#">Nhạc Trẻ</a></p>
                                 <p>Cùng lắng nghe những bài hát trong Playlist Khi Ta Say được ban biên tập tuyển chọn để chia sẻ những cung bậc cảm xúc trong cơn say muốn gửi đến bạn.</p>
-                            </div>
+                            </div> -->
 
                             <!-- Music Play -->
                             <div class="row">
                                 <div class="player col-12 d-flex">
                                     <ul>
-                                        <li class="cover"><img src="http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png"/></li>
+                                        <li class="cover"><img src="http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png" id="singer-pic"/></li>
                                     </ul>
                                     <ul class="text-center pl-5">
                                     <li class="info">
-                                        <h1>The Noisy Freaks</h1>
-                                        <h4>Premiere</h4>
-                                        <h2>I Need You Back</h2>
+                                        <h1 id="song-name">Song Name</h1>
+                                        <h4 id="singer-name">Singer Name</h4>
                                 
                                         <div class="button-items">
                                             <audio id="music" preload="auto" loop="false">
-                                                <source src="https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1" type="audio/mp3">
-                                                <source src="https://dl.dropbox.com/s/75jpngrgnavyu7f/The-Noisy-Freaks.ogg?dl=1" type="audio/ogg">
+                                                <source src="https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1" type="audio/mp3" id="sourceAudio">
                                             </audio>
                                             <div id="slider"><div id="elapsed"></div></div>
                                             <p id="timer">0:00</p>
@@ -289,24 +339,8 @@
 
                 <div class="row mt-3">
                     <div class="col-8">
-                        <h3>Túy Âm (Masew x NhatNguyen Remix)</h3>
-                        <h5>Xesi</h5>
                         <h3>Lời Bài Hát</h3>
-                        <p>Rót đến tràn ly, anh chìm đắm trong men cay đắng nồng,<br>
-                            Khóc chát làn mi, uống cùng anh cho đêm nay say chất ngất !<br>
-                            Dẫu năm tháng ấy còn đâu những đam mê ta kiếm tìm?<br>
-                            Màu mắt xanh ngời lạc giữa mây ngàn về chốn xa xôi...<br>
-                            Hãy say cùng anh, hãy hát cùng anh, hãy khóc cùng anh<br>
-                            Thêm 1 lần...<br>
-                            Để anh được gần trái tim của em dù trong phút giây,<br>
-                            Hình bóng người tan biến dần phía sau những nỗi sầu,<br>
-                            Với em chắc quá đủ cho một mối tình...<br>
-                            Dẫu em không thể ở lại với anh,<br>
-                            Mình chẳng cùng với nhau đi hết quãng đường<br>
-                            Ôm ấp hi vọng một ngày ngát xanh...<br>
-                            Tháng năm thăng trầm dòng đời ngả nghiêng,<br>
-                            Mình tự rời bỏ nhau,<br>
-                            Say đến điên dại, say hết kiếp người, say cho cháy lòng...</p>
+                        <p id="lyrics" style="white-space: pre-line;"></p>
                     </div>
                     <!-- icon play left -->
                     <div class="col">
@@ -326,55 +360,174 @@
                                     <p>Name Singer</p>
                                 </div>
                             </li>
-                            
-                            
                         </ul>
                     </div>
                 </div>
                 <!-- Cùng Nghệ Sĩ -->
                 <div class="d-flex mt-2 mb-2">
-                    <h3>Cùng Nghệ Sĩ</h3>
-                    <!-- <a class="ml-4 mr-2" href="#">Nghe Nhiều</a>
-                    <a href="#">Mới Nhất</a> -->
+                    <h3>Nghệ Sĩ Khác</h3>
                   </div>
-                  <div class="row">
-                      <div class="col-3 pd-0">
-                        <a href="/Login/login.html" class="play ">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
-                        <p> <i class='bx bx-play-circle'></i></p>
-                        </a>
-                        <a href="#">Khi ta chưa say</a>
-                      </div>
-                      <div class="col-3 pd-0" style=" padding: 0;">
-                        <a href="/Login/login.html" class="play ">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
-                        <p> <i class='bx bx-play-circle'></i></p>
-                        </a>
-                        <a href="#">Khi ta say</a>
-                      </div>
-                      <div class="col-3">
-                        <a href="/Login/login.html" class="play ">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxMTjrxfN7X0UV8WoXFry1H4XgskY5FEzZgw&usqp=CAU" alt="anh nhac">
-                        <p> <i class='bx bx-play-circle'></i></p>
-                        </a>
-                        <a href="#">Khi ta say</a>
-                      </div>
-                      <div class="col-3 " style=" padding: 0;" >
-                        <a href="/Login/login.html" class="play">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ywvJ7J1SXreqoU3cPMHWXjLDkpquSRELUA&usqp=CAU" alt="anh nhac">
-                        <p> <i class='bx bx-play-circle'></i></p>
-                        </a>
-                        <a href="#">Khi ta say</a>
-                      </div>
+                  <div class="row" id="random-area">      
                   </div>
-
-            </div>
-            <!-- Quảng Cáo -->
-            
-      
+            </div>    
     </div>
-    
 
+    <script>
+      var music = document.getElementById("music");
+      var playButton = document.getElementById("play");
+      var pauseButton = document.getElementById("pause");
+      var playhead = document.getElementById("elapsed");
+      var timeline = document.getElementById("slider");
+      var timer = document.getElementById("timer");
+      var duration;
+      pauseButton.style.visibility = "hidden";
+
+      var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+      music.addEventListener("timeupdate", timeUpdate, false);
+
+      function timeUpdate() {
+          var playPercent = timelineWidth * (music.currentTime / duration);
+          playhead.style.width = playPercent + "px";
+
+          var secondsIn = Math.floor(((music.currentTime / duration) / 3.5) * 100);
+          if (secondsIn <= 9) {
+              timer.innerHTML = "0:0" + secondsIn;
+          } else {
+              timer.innerHTML = "0:" + secondsIn;
+          }
+      }
+
+      playButton.onclick = function() {
+          music.play();
+          playButton.style.visibility = "hidden";
+          pause.style.visibility = "visible";
+      }
+
+      pauseButton.onclick = function() {
+          music.pause();
+          playButton.style.visibility = "visible";
+          pause.style.visibility = "hidden";
+      }
+
+      music.addEventListener("canplaythrough", function () {
+          duration = music.duration;
+      }, false);
+
+
+      // API :
+      let songID;
+      const urlParams = new URLSearchParams(window.location.search);
+      songID = urlParams.get("id");
+      playlistID = urlParams.get("id");
+      function getRandomSingers() {
+        // Fetch dữ liệu từ API
+        fetch("http://127.0.0.1:8000/api/singer", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({}),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+              // Lấy một tập con ngẫu nhiên gồm 4 ca sĩ
+              const randomSingers = getRandomElements(data, 4);
+              // Cập nhật HTML với dữ liệu đã lấy được
+              otherSinger(randomSingers);
+          })
+          .catch((error) => {
+            console.error("Lỗi khi tải dữ liệu:", error);
+          });
+      }
+      function callSinger(data) {
+        // Kiểm tra xem data có thuộc tính singerID không
+        if (data && data.singerID) {
+          // Gửi request đến API singer
+          fetch("http://127.0.0.1:8000/api/singer", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id: data.singerID }),
+          })
+            .then((response) => response.json())
+            .then((singerData) => {
+              updateSinger(singerData);
+            })
+            .catch((error) => {
+              console.error("Lỗi khi tải dữ liệu ca sĩ:", error);
+            });
+        } else {
+          console.error("Không tìm thấy singerID trong dữ liệu.");
+        }
+      }
+      function callSong() {
+        fetch("http://127.0.0.1:8000/api/song/getsong", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: songID }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            callSinger(data);
+            updateSongs(data);
+          })
+          .catch((error) => {
+            console.error("Lỗi khi tải dữ liệu:", error);
+          });
+      }
+      function fetchData() {
+        getRandomSingers();
+        callSong();
+      }
+      async function updateSinger(data) {
+        const singerData = data;
+        document.getElementById("singer-pic").src = "http://127.0.0.1:8000" + singerData.urlAvatar;
+      }
+      async function updateSongs(data) {
+        const songData = data;
+        const lyrics = document.getElementById('lyrics');
+        lyrics.innerHTML = "";
+        lyrics.innerHTML += songData.lyrics;
+        const songName = document.getElementById('song-name');
+        songName.innerHTML = "";
+        songName.innerHTML += songData.title;
+        const signerName = document.getElementById('singer-name');
+        signerName.innerHTML = "";
+        signerName.innerHTML += songData.artist;
+        const audio = document.getElementById('music');
+        const songUrl = document.getElementById('sourceAudio');
+        songUrl.src = "http://127.0.0.1:8000" + songData.file_path;
+        audio.load()
+      }
+      async function otherSinger(data) {
+        const randomSinger = data;
+        const randomArea = document.getElementById("random-area")
+        randomArea.innerHTML = "";
+        data.forEach((radomSinger) => {
+          const url = "http://127.0.0.1:8000" + radomSinger.urlAvatar;
+          const Item = `
+          <div class="col-3 pd-0" style="display: flex; flex-direction: column; align-items: center;">
+            <a href="artist-detail.html?id=${radomSinger.id}" class="play ">
+              <img src="${url}" alt="" style="width: 80%; height: 260px;">
+            </a>
+            <a href="artist-detail.html?id=${radomSinger.id}">${radomSinger.name}</a>
+          </div>
+          
+          `;
+          randomArea.innerHTML += Item;
+        });
+      }
+      function getRandomElements(array, numElements) {
+        const shuffled = array.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, numElements);
+      }
+      
+      fetchData();
+  </script>
+    <!-- Footer -->
     <footer class="page-footer font-small indigo bg-dark">
 
         <!-- Footer Links -->
@@ -475,49 +628,5 @@
         <!-- Copyright -->
       
       </footer>
-
-
-
-    <script>
-        var music = document.getElementById("music");
-        var playButton = document.getElementById("play");
-        var pauseButton = document.getElementById("pause");
-        var playhead = document.getElementById("elapsed");
-        var timeline = document.getElementById("slider");
-        var timer = document.getElementById("timer");
-        var duration;
-        pauseButton.style.visibility = "hidden";
-
-        var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-        music.addEventListener("timeupdate", timeUpdate, false);
-
-        function timeUpdate() {
-            var playPercent = timelineWidth * (music.currentTime / duration);
-            playhead.style.width = playPercent + "px";
-
-            var secondsIn = Math.floor(((music.currentTime / duration) / 3.5) * 100);
-            if (secondsIn <= 9) {
-                timer.innerHTML = "0:0" + secondsIn;
-            } else {
-                timer.innerHTML = "0:" + secondsIn;
-            }
-        }
-
-        playButton.onclick = function() {
-            music.play();
-            playButton.style.visibility = "hidden";
-            pause.style.visibility = "visible";
-        }
-
-        pauseButton.onclick = function() {
-            music.pause();
-            playButton.style.visibility = "visible";
-            pause.style.visibility = "hidden";
-        }
-
-        music.addEventListener("canplaythrough", function () {
-            duration = music.duration;
-        }, false);
-    </script>
 </body>
 </html>
