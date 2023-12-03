@@ -316,13 +316,8 @@
                             <td id="songArtist">${song.singer_name}</td>
                             <td>
                                 <div class="flex align-items-center list-user-action">
-                                    <!-- <a class="bg-primary" data-toggle="tooltip" data-placement="top"
-                                        title="" data-original-title="Edit"
-                                        href="admin-add-category.html"><i
-                                            class="ri-pencil-line"></i></a> -->
-                                    <a class="bg-primary" data-toggle="tooltip" data-placement="top"
-                                        title="" data-original-title="Delete" href="#"><i
-                                            class="ri-delete-bin-line"></i></a>
+                                  <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Play" href="../play.html?id=${song.id}"><i class="ri-pencil-line"></i></a>
+                                  <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" href="#" onclick="deleteSong(${song.id})"><i class="ri-delete-bin-line"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -331,6 +326,33 @@
               num++;
             });
           });
+      }
+      function deleteSong(id) {
+        playlist_id = urlParams.get("id");
+        const requestBody = {
+          playlist_id: playlist_id,
+          song_id: id,
+        };
+        fetch(`http://127.0.0.1:8000/api/playlist/song`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Xóa không thành công");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Xóa thành công:", data);
+          })
+          .catch((error) => {
+            console.error("Lỗi xóa:", error.message);
+          });
+        fetchData();
       }
       function fetchData() {
         getPlaylist();
