@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="Nam.css">
     <link rel="stylesheet" href="style.css">
     <script src="./Admin/js/loginTrue.js"></script>
+    <style>
+      ul li {
+        list-style: none;
+      }
+    </style>
 
 </head>
 <body>
@@ -93,54 +98,36 @@
     </style>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-3">
-            <li class="nav-item dropdown ml-3">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Chủ Đề
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            <li class="nav-item dropdown ml-3">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Bảng Xếp Hạng
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            <li class="nav-item dropdown ml-3">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Album
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            <li class="nav-item dropdown ml-3">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Nghệ Sĩ
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-3">
+          <li class="nav-item dropdown ml-3">
+            <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
+              Bảng Xếp Hạng
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-3">
+            <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
+              Bảng Xếp Hạng
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-3">
+            <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
+              Bảng Xếp Hạng
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-3">
+            <a class="nav-link  text-white" href="#" id="navbarDropdownMenuLink">
+              Bảng Xếp Hạng
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
       <!-- content -->
       <div id="content" class="chart-index">
         <div class="wrapper" id="main-body">
@@ -186,16 +173,12 @@
                                         <option value="34">Tuần 34 ( Từ 21/08 - 28/08)</option>
                                 </select>
                                 </div>
-                                <div class="play-option">
-                                        <p>
-                                            <a class="btn-share-v2" title="nhac.vn" href="">
-                                                <span class="share"></span>Chia sẻ
-                                            </a>
+                                <div class="play-option text-center">
+                                        <p class="mb-0" style="border-right: 1px solid white; padding-right: 10px">
+                                            <a class="btn-share-v2" title="nhac.vn" href=""> chia sẻ <i class='bx bx-share'></i> </a>
                                         </p>
-                                        <p>
-                                            <a href="" class="btn-listen-all" title="nhac.vn">
-                                                <span class=""></span>Nghe Hết
-                                            </a>
+                                        <p class="mb-0">
+                                            <a href="" class="btn-listen-all" title="nhac.vn"> Nghe hết <i class='bx bx-music'></i> </a>
                                         </p>
                                 </div>
                             </div>
@@ -307,10 +290,6 @@
             </div>
             <div class="colum2 flr">
                 <!--sidebar right-->
-                <div class="wrr-column2 margin-t-10">
-                    ???
-                </div>
-        
         <div class="topcontent-list-widget-right">
                     <div class="box_title">
                     <h2 class="topic"><a href="" title="Chủ đề nổi bật">Chủ đề nổi bật</a></h2>
