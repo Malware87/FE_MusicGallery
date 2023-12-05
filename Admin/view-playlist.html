@@ -103,7 +103,7 @@
                 >
                   <li>
                     <a href="index.html"
-                      ><i class="las la-id-card-alt"></i>User Profile</a
+                      ><i class="las la-id-card-alt"></i>Contact</a
                     >
                   </li>
                   <li class="active">
@@ -182,15 +182,6 @@
                             >
                               <b id="pcount">15 Tracks</b>
                             </h6>
-                          </div>
-
-                          <div class="d-flex align-items-center">
-                            <button class="btn btn-primary mr-2">
-                              Play music
-                            </button>
-                            <button class="btn btn-outline-secondary ms-3">
-                              Edit
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -316,7 +307,7 @@
                             <td id="songArtist">${song.singer_name}</td>
                             <td>
                                 <div class="flex align-items-center list-user-action">
-                                  <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Play" href="../play.html?id=${song.id}"><i class="ri-play-line"></i></a>
+                                  <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Play" href="../play.html?id=${song.id}&playlist=${playlist_id}"><i class="ri-play-line"></i></a>
                                   <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" href="#" onclick="deleteSong(${song.id})"><i class="ri-delete-bin-line"></i></a>
                                 </div>
                             </td>

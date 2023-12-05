@@ -1,260 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Muzik- Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Typography CSS -->
+    <link rel="stylesheet" href="css/typography.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/checklogin.js"></script>
+    <script src="js/checkRole.js"></script>
+  </head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Muzik- Responsive Bootstrap 4 Admin Dashboard Template</title>
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/favicon.ico" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <!-- Typography CSS -->
-  <link rel="stylesheet" href="css/typography.css" />
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Responsive CSS -->
-  <link rel="stylesheet" href="css/responsive.css" />
-  <script src="js/checklogin.js"></script>
-  <script src="js/checkRole.js"></script>
-</head>
-
-<body>
-  <!-- loader Start -->
-  <div id="loading">
-    <div id="loading-center"></div>
-  </div>
-  <!-- loader END -->
-  <!-- Wrapper Start -->
-  <div class="wrapper">
-    <!-- Sidebar  -->
-    <div class="iq-sidebar">
-      <div class="iq-sidebar-logo d-flex justify-content-between">
-        <a href="../" class="header-logo">
-          <img src="images/logo.png" class="img-fluid rounded-normal" alt="" />
-          <div class="logo-title">
-            <span class="text-primary text-uppercase">Muzik</span>
-          </div>
-        </a>
-        <div class="iq-menu-bt-sidebar">
-          <div class="iq-menu-bt align-self-center">
-            <div class="wrapper-menu">
-              <div class="main-circle"><i class="las la-bars"></i></div>
+  <body>
+    <!-- loader Start -->
+    <div id="loading">
+      <div id="loading-center"></div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <div class="iq-sidebar">
+        <div class="iq-sidebar-logo d-flex justify-content-between">
+          <a href="../" class="header-logo">
+            <img
+              src="images/logo.png"
+              class="img-fluid rounded-normal"
+              alt=""
+            />
+            <div class="logo-title">
+              <span class="text-primary text-uppercase">Muzik</span>
+            </div>
+          </a>
+          <div class="iq-menu-bt-sidebar">
+            <div class="iq-menu-bt align-self-center">
+              <div class="wrapper-menu">
+                <div class="main-circle"><i class="las la-bars"></i></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id="sidebar-scrollbar">
-        <nav class="iq-sidebar-menu">
-          <ul id="iq-sidebar-toggle" class="iq-menu">
-            <li class="active" class="ifAdmin">
-              <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                  class="ripple rippleEffect"></span><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span><i
-                  class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-              <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                <li class="active">
-                  <a href="admin-category.html"><i class="ri-function-line"></i>Category</a>
-                </li>
-                <li>
-                  <a href="admin-singer.html"><i class="las la-microphone-alt"></i>Singer</a>
-                </li>
-                <li>
-                  <a href="admin-song.html"><i class="las la-play-circle"></i>Music</a>
-                </li>
-              </ul>
-            </li>
+        <div id="sidebar-scrollbar">
+          <nav class="iq-sidebar-menu">
+            <ul id="iq-sidebar-toggle" class="iq-menu">
+              <li class="active" class="ifAdmin">
+                <a
+                  href="#admin"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="true"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="ri-admin-line iq-arrow-left"></i><span>Admin</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="admin"
+                  class="iq-submenu collapse show"
+                  data-parent="#iq-sidebar-toggle"
+                >
+                  <li class="active">
+                    <a href="admin-category.html"
+                      ><i class="ri-function-line"></i>Category</a
+                    >
+                  </li>
+                  <li>
+                    <a href="admin-singer.html"
+                      ><i class="las la-microphone-alt"></i>Singer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="admin-song.html"
+                      ><i class="las la-play-circle"></i>Music</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-            <li>
-              <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
-                  class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i
-                  class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-              <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                <li>
-                  <a href="index.html"><i class="las la-id-card-alt"></i>User Profile</a>
-                </li>
-                <li>
-                  <a href="playlist.html"><i class="las la-file-audio"></i>PlayList</a>
-                </li>
-                <li>
-                  <a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a>
-                </li>
-                <li class="ifAdmin">
-                  <a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a>
-                </li>
-                <li class="ifAdmin">
-                  <a href="user-list.html"><i class="las la-th-list"></i>User List</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+              <li>
+                <a
+                  href="#userinfo"
+                  class="iq-waves-effect"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  ><span class="ripple rippleEffect"></span
+                  ><i class="las la-user-tie iq-arrow-left"></i><span>User</span
+                  ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+                ></a>
+                <ul
+                  id="userinfo"
+                  class="iq-submenu collapse"
+                  data-parent="#iq-sidebar-toggle"
+                  style=""
+                >
+                  <li>
+                    <a href="index.html"
+                      ><i class="las la-id-card-alt"></i>Contact</a
+                    >
+                  </li>
+                  <li>
+                    <a href="playlist.html"
+                      ><i class="las la-file-audio"></i>PlayList</a
+                    >
+                  </li>
+                  <li>
+                    <a href="profile-edit.html"
+                      ><i class="las la-edit"></i>User Edit</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="add-user.html"
+                      ><i class="las la-plus-circle"></i>User Add</a
+                    >
+                  </li>
+                  <li class="ifAdmin">
+                    <a href="user-list.html"
+                      ><i class="las la-th-list"></i>User List</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <button
+          style="font-size: 16px"
+          type="button"
+          class="btn btn-danger ml-5 w-50 text-center"
+          onclick="logout()"
+        >
+          <i
+            style="font-size: 25px; margin-top: 3px"
+            class="las la-sign-out-alt"
+          ></i
+          >LOGOUT
+        </button>
+        <script src="js/Logout.js"></script>
       </div>
-      <button style="font-size: 16px" type="button" class="btn btn-danger ml-5 w-50 text-center" onclick="logout()">
-        <i style="font-size: 25px; margin-top: 3px" class="las la-sign-out-alt"></i>LOGOUT
-      </button>
-      <script src="js/Logout.js"></script>
-    </div>
 
-    <!-- TOP Nav Bar END -->
-    <!-- Page Content  -->
-    <div id="content-page" class="content-page">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="iq-card">
-              <div class="iq-card-header d-flex justify-content-between">
-                <div class="iq-header-title">
-                  <h4 class="card-title">Add Categories</h4>
+      <!-- TOP Nav Bar END -->
+      <!-- Page Content  -->
+      <div id="content-page" class="content-page">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                    <h4 class="card-title">Add Categories</h4>
+                  </div>
+                </div>
+                <div class="iq-card-body">
+                  <form id="categoryForm">
+                    <div class="form-group">
+                      <label for="categoryName">Category Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        required
+                        id="categoryName"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="categoryDescription"
+                        >Category Description:</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="4"
+                        id="categoryDescription"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onclick="addCategory()"
+                    >
+                      Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                  </form>
                 </div>
               </div>
-              <div class="iq-card-body">
-                <form id="categoryForm">
-                  <div class="form-group">
-                    <label for="categoryName">Category Name:</label>
-                    <input type="text" class="form-control" required id="categoryName" />
-                  </div>
-                  <div class="form-group">
-                    <label for="categoryDescription">Category Description:</label>
-                    <textarea class="form-control" rows="4" id="categoryDescription"></textarea>
-                  </div>
-                  <button type="button" class="btn btn-primary" onclick="addCategory()">
-                    Submit
-                  </button>
-                  <button type="reset" class="btn btn-danger">Reset</button>
-                </form>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    function addCategory() {
-      const categoryName = document.getElementById("categoryName").value;
-      const categoryDescription = document.getElementById(
-        "categoryDescription"
-      ).value;
+    <script>
+      function addCategory() {
+        const categoryName = document.getElementById("categoryName").value;
+        const categoryDescription = document.getElementById(
+          "categoryDescription"
+        ).value;
 
-      const formData = new FormData();
-      formData.append("name", categoryName);
-      formData.append("description", categoryDescription);
+        const formData = new FormData();
+        formData.append("name", categoryName);
+        formData.append("description", categoryDescription);
 
-      fetch("http://127.0.0.1:8000/api/genre/add", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Thêm thể loại không thành công");
-          }
-          return response.json();
+        fetch("http://127.0.0.1:8000/api/genre/add", {
+          method: "POST",
+          body: formData,
         })
-        .then((data) => {
-          console.log("Thêm thể loại thành công:", data);
-          showPopup("SuccessPopup");
-        })
-        .catch((error) => {
-          console.error("Lỗi khi thêm thể loại:", error.message);
-          showPopup("FailedPopup");
-        });
-    }
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Thêm thể loại không thành công");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Thêm thể loại thành công:", data);
+            showPopup("SuccessPopup");
+          })
+          .catch((error) => {
+            console.error("Lỗi khi thêm thể loại:", error.message);
+            showPopup("FailedPopup");
+          });
+      }
 
-    function showPopup(popupId) {
-      const popup = document.getElementById(popupId);
-      popup.style.display = "block";
-      // Ẩn popup sau 3 giây
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 3000);
-    }
-  </script>
-  <!-- Pop Up -->
-  <div id="FailedPopup" class="mess-popup failed">Thêm không thành công!</div>
-  <div id="SuccessPopup" class="mess-popup success">Thêm thành công!</div>
-  <style>
-    /* CSS để định dạng popup */
-    .mess-popup {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      color: white;
-      padding: 10px;
-      display: none;
-    }
+      function showPopup(popupId) {
+        const popup = document.getElementById(popupId);
+        popup.style.display = "block";
+        // Ẩn popup sau 3 giây
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      }
+    </script>
+    <!-- Pop Up -->
+    <div id="FailedPopup" class="mess-popup failed">Thêm không thành công!</div>
+    <div id="SuccessPopup" class="mess-popup success">Thêm thành công!</div>
+    <style>
+      /* CSS để định dạng popup */
+      .mess-popup {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        color: white;
+        padding: 10px;
+        display: none;
+      }
 
-    .success {
-      background-color: #4caf50;
-    }
+      .success {
+        background-color: #4caf50;
+      }
 
-    .failed {
-      background-color: #ff0000;
-    }
-  </style>
-  <!-- Wrapper END -->
-  <!-- Footer -->
+      .failed {
+        background-color: #ff0000;
+      }
+    </style>
+    <!-- Wrapper END -->
+    <!-- Footer -->
 
-  <!-- color-customizer END -->
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="js/checkAdmin.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Appear JavaScript -->
-  <script src="js/jquery.appear.js"></script>
-  <!-- Countdown JavaScript -->
-  <script src="js/countdown.min.js"></script>
-  <!-- Counterup JavaScript -->
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <!-- Wow JavaScript -->
-  <script src="js/wow.min.js"></script>
-  <!-- Apexcharts JavaScript -->
-  <script src="js/apexcharts.js"></script>
-  <!-- Slick JavaScript -->
-  <script src="js/slick.min.js"></script>
-  <!-- Select2 JavaScript -->
-  <script src="js/select2.min.js"></script>
-  <!-- Owl Carousel JavaScript -->
-  <script src="js/owl.carousel.min.js"></script>
-  <!-- Magnific Popup JavaScript -->
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <!-- Smooth Scrollbar JavaScript -->
-  <script src="js/smooth-scrollbar.js"></script>
-  <!-- lottie JavaScript -->
-  <script src="js/lottie.js"></script>
-  <!-- am core JavaScript -->
-  <script src="js/core.js"></script>
-  <!-- am charts JavaScript -->
-  <script src="js/charts.js"></script>
-  <!-- am animated JavaScript -->
-  <script src="js/animated.js"></script>
-  <!-- am kelly JavaScript -->
-  <script src="js/kelly.js"></script>
-  <!-- am maps JavaScript -->
-  <script src="js/maps.js"></script>
-  <!-- am worldLow JavaScript -->
-  <script src="js/worldLow.js"></script>
-  <!-- Raphael-min JavaScript -->
-  <script src="js/raphael-min.js"></script>
-  <!-- Morris JavaScript -->
-  <script src="js/morris.js"></script>
-  <!-- Morris min JavaScript -->
-  <script src="js/morris.min.js"></script>
-  <!-- Flatpicker Js -->
-  <script src="js/flatpickr.js"></script>
-  <!-- Style Customizer -->
-  <script src="js/style-customizer.js"></script>
-  <!-- Chart Custom JavaScript -->
-  <script src="js/chart-custom.js"></script>
-  <!-- Music js -->
-  <script src="js/music-player.js"></script>
-  <!-- Music-player js -->
-  <script src="js/music-player-dashboard.js"></script>
-  <!-- Custom JavaScript -->
-  <script src="js/custom.js"></script>
-</body>
-
+    <!-- color-customizer END -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/checkAdmin.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Appear JavaScript -->
+    <script src="js/jquery.appear.js"></script>
+    <!-- Countdown JavaScript -->
+    <script src="js/countdown.min.js"></script>
+    <!-- Counterup JavaScript -->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Wow JavaScript -->
+    <script src="js/wow.min.js"></script>
+    <!-- Apexcharts JavaScript -->
+    <script src="js/apexcharts.js"></script>
+    <!-- Slick JavaScript -->
+    <script src="js/slick.min.js"></script>
+    <!-- Select2 JavaScript -->
+    <script src="js/select2.min.js"></script>
+    <!-- Owl Carousel JavaScript -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup JavaScript -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
+    <script src="js/smooth-scrollbar.js"></script>
+    <!-- lottie JavaScript -->
+    <script src="js/lottie.js"></script>
+    <!-- am core JavaScript -->
+    <script src="js/core.js"></script>
+    <!-- am charts JavaScript -->
+    <script src="js/charts.js"></script>
+    <!-- am animated JavaScript -->
+    <script src="js/animated.js"></script>
+    <!-- am kelly JavaScript -->
+    <script src="js/kelly.js"></script>
+    <!-- am maps JavaScript -->
+    <script src="js/maps.js"></script>
+    <!-- am worldLow JavaScript -->
+    <script src="js/worldLow.js"></script>
+    <!-- Raphael-min JavaScript -->
+    <script src="js/raphael-min.js"></script>
+    <!-- Morris JavaScript -->
+    <script src="js/morris.js"></script>
+    <!-- Morris min JavaScript -->
+    <script src="js/morris.min.js"></script>
+    <!-- Flatpicker Js -->
+    <script src="js/flatpickr.js"></script>
+    <!-- Style Customizer -->
+    <script src="js/style-customizer.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="js/chart-custom.js"></script>
+    <!-- Music js -->
+    <script src="js/music-player.js"></script>
+    <!-- Music-player js -->
+    <script src="js/music-player-dashboard.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/custom.js"></script>
+  </body>
 </html>
