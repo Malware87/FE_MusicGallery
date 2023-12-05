@@ -112,7 +112,8 @@
                     </div>
                     <p id="timer">0:00</p>
                     <div class="controls">
-                      <span class="expend mr-1"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
+                      <span class="expend mr-1"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve"
+                          onclick="previous()">
                           <g>
                             <polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7" />
                           </g>
@@ -136,7 +137,8 @@
                         </g>
                       </svg>
 
-                      <span class="expend ml-0"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
+                      <span class="expend ml-0"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve"
+                          onclick="next()">
                           <g>
                             <polygon
                               points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7" />
@@ -166,7 +168,9 @@
             </div>
           </div>
         </div>
-        <div class="col-4" >
+        <div class="col-4">
+          <div id="playlist-list"></div>
+
           <h1 class="mt" style="padding-left: 40px; width: 380px" id="ortherSong-title">Bài hát liên quan</h1>
           <ul id="ortherSong-list">
             <li class="d-flex mt-1 mb-1 " style="border-bottom: 1px solid black; width: 380px">
@@ -179,6 +183,7 @@
               </div>
             </li>
           </ul>
+
         </div>
       </div>
       <!-- Cùng Nghệ Sĩ -->
@@ -288,7 +293,7 @@
 
 
     // API :
-    let songID, playlistID, currentID,singerName,singerURL;
+    let songID, playlistID, currentID, singerName, singerURL;
     const urlParams = new URLSearchParams(window.location.search);
     songID = urlParams.get("id");
     playlistID = urlParams.get("playlist");
@@ -366,8 +371,8 @@
         .then((data) => {
           callSinger(data);
           updateSongs(data);
-          if(playlistID == null){otherSongfromSinger(data)}
-          else{otherSonginPlaylist()}
+          if (playlistID == null) { otherSongfromSinger(data) }
+          else { otherSonginPlaylist() }
         })
         .catch((error) => {
           console.error("Lỗi khi tải dữ liệu:", error);
@@ -485,97 +490,93 @@
         }
       });
     }
-    function otherSonginPlaylist(){
-        fetch("http://127.0.0.1:8000/api/song/playlist/get", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            playlist_id: playlistID,
-          }),
+    function otherSonginPlaylist() {
+      fetch("http://127.0.0.1:8000/api/song/playlist/get", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          playlist_id: playlistID,
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            console.log("can not cook");
+          }
         })
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              console.log("can not cook");
-            }
-          })
-          .then(({ list, count }) => {
-            totalTracks = count;
+        .then(({ list, count }) => {
+          totalTracks = count;
+          var playlistList =
             document.getElementById(
-              "ortherSong-title"
-            ).innerHTML = `Bài hát cùng PlayList`;
-            const listBody = document.getElementById("ortherSong-list");
-            listBody.innerHTML = "";
-            let num = 1;
-            list.forEach((song) => {
-              const url = "http://127.0.0.1:8000" + song.urlAvatar
-              const row = `
+              "playlist-list"
+            );
+          playlistList.innerHTML = `<h1 class="mt" style="padding-left: 40px; width: 380px" >Bài hát cùng playlist</h1>
+          <ul id="ortherSong-list1"></ul>`;
+          const listBody = document.getElementById("ortherSong-list1");
+          listBody.innerHTML = "";
+          let num = 1;
+          list.forEach((song) => {
+            const url = "http://127.0.0.1:8000" + song.urlAvatar
+            const row = `
                     <li class="d-flex mt-1 mb-1 " style="border-bottom: 1px solid black; width: 380px">
-                      <img class="mt-2 mb-2" style="height: 80px; width: 150px"
-                        src="${url}"
-                        alt="">
                       <div class=" mt-3 ml-2">
-                        <a href="play.html?id=${song.id}"><b>${song.song_name}g</b></a>
+                        <a href="play.html?id=${song.id}"><b>${song.song_name}</b></a>
                         <p>${song.singer_name}</p>
                       </div>
                     </li>
                     `;
-              listBody.innerHTML += row;
-              num++;
-            });
+            listBody.innerHTML += row;
+            num++;
           });
-      }
-      function otherSongfromSinger(data){
-        fetch("http://127.0.0.1:8000/api/song/searchbysinger", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ singerID: data.singerID }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            const songs = Object.values(data)
-            document.getElementById(
-                "ortherSong-title"
-              ).innerHTML = `Bài hát cùng ca sĩ`;
-              const listBody = document.getElementById("ortherSong-list");
-              listBody.innerHTML = "";
-              let num = 1;
-              songs.forEach((song) => {
-                const url = "http://127.0.0.1:8000" + singerURL
-                const row = `
+        });
+    }
+    function otherSongfromSinger(data) {
+      fetch("http://127.0.0.1:8000/api/song/searchbysinger", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ singerID: data.singerID }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const songs = Object.values(data)
+          document.getElementById(
+            "ortherSong-title"
+          ).innerHTML = `Bài hát cùng ca sĩ`;
+          const listBody = document.getElementById("ortherSong-list");
+          listBody.innerHTML = "";
+          let num = 1;
+          songs.forEach((song) => {
+            const url = "http://127.0.0.1:8000" + singerURL
+            const row = `
                       <li class="d-flex mt-1 mb-1 " style="border-bottom: 1px solid black; width: 380px">
                         <img class="mt-2 mb-2" style="height: 80px; width: 150px"
                           src="${url}"
                           alt="">
                         <div class=" mt-3 ml-2">
-                          <a href="play.html?id=${song.id}"><b>${song.title}g</b></a>
+                          <a href="play.html?id=${song.id}"><b>${song.title}</b></a>
                           <p>${singerName}</p>
                         </div>
                       </li>
                       `;
-                listBody.innerHTML += row;
-                num++;
-              });
-          })
-          .catch((error) => {
-            console.error("Lỗi khi tải dữ liệu:", error);
+            listBody.innerHTML += row;
+            num++;
           });
-      }
+        })
+        .catch((error) => {
+          console.error("Lỗi khi tải dữ liệu:", error);
+        });
+    }
     function fetchData() {
       getRandomSingers();
       callAllPlayList();
       callSong();
     }
     fetchData();
-
-
-
-
 
     ////dialog 
     // script.js
@@ -615,6 +616,24 @@
         dialog.style.display = 'none';
       }
     });
+    function next() {
+      const urlParams = new URLSearchParams(window.location.search);
+      songID = urlParams.get("id");
+      let id = parseInt(songID, 10) || 0;
+
+      // Decrement the id (assuming you want to go to the previous song)
+      id++;
+      window.location.href = "play.html?id=" + id;
+    }
+    function previous() {
+      const urlParams = new URLSearchParams(window.location.search);
+      songID = urlParams.get("id");
+      let id = parseInt(songID, 10) || 0;
+
+      // Decrement the id (assuming you want to go to the previous song)
+      id--;
+      window.location.href = "play.html?id=" + id;
+    }
 
   </script>
 </body>
