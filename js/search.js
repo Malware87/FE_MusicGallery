@@ -1,43 +1,46 @@
 const urlParams = new URLSearchParams(window.location.search);
 entry = urlParams.get("q");
-fetch('http://127.0.0.1:8000/api/search', {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ entry: entry }),
-}).then(response => {
+fetch("http://127.0.0.1:8000/api/search", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ entry: entry }),
+})
+  .then((response) => {
     return response.json();
-}).then(({ songs, artists, count }) => {
-    document.getElementById('search-count').innerHTML = `
+  })
+  .then(({ song, artist, count }) => {
+    console.log(song, artist, count);
+    document.getElementById("search-count").innerHTML = `
    Tìm được ${count} kết quả:
     `;
-    const songList = document.getElementById('page1');
+    const songList = document.getElementById("page1");
     songList.innerHTML = "";
-    songs.forEach(song => {
-        const row = `
+    song.forEach((song) => {
+      const row = `
         <ul class="pl-0 mt-3">
         <li class="d-flex style-none justify-content-between" style="border-bottom: 1px solid gray;">
           <div class="d-flex ">
             <div class="">
               <a href="play.html?id=${song.id}">${song.title}</a>
-              <p>${song.artist}</p>
+              <p>${song.singerName}</p>
             </div>
           </div>
           <div class="d-flex flex-end">
-            <button style="height: 30px; width: 30xp; margin-top: 8px;" onclick="openDialog()"><i
+            <button style="height: 30px; width: 30xp; margin-top: 8px;" onclick="openDialog(${song.id})"><i
                 class='bx bxs-message-square-add'></i></button>
             <!-- icom -->
           </div>
         </li>
       </ul>
         `;
-        songList.innerHTML += row;
+      songList.innerHTML += row;
     });
-    const artistList = document.getElementById('page2');
+    const artistList = document.getElementById("page2");
     artistList.innerHTML = "";
-    artists.forEach(artist => {
-        const row = `
+    artist.forEach((artist) => {
+      const row = `
         <ul class="pl-0 mt-3">
         <li class="d-flex style-none justify-content-between" style="border-bottom: 1px solid gray;">
           <div class="d-flex ">
@@ -49,6 +52,6 @@ fetch('http://127.0.0.1:8000/api/search', {
         </li>
       </ul>
         `;
-        artistList.innerHTML += row;
-    })
-});
+      artistList.innerHTML += row;
+    });
+  });

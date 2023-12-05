@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="images/favicon.ico" />
 
 
+
   <!-- Bootstrap 4 CND -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -27,7 +28,6 @@
   <script src="js/search.js"></script>
   <script src="js/search-bar.js"></script>
   <script src="./Admin/js/loginTrue.js"></script>
-
   <style>
     .page {
       display: none;
@@ -334,18 +334,89 @@
   </footer>
 
   <script>
-
+    let currentUser = localStorage.getItem('userId')
+    let currentSongID
     ////dialog 
     // script.js
-    function openDialog() {
+    function openDialog(songID) {
+      currentSongID = songID;
+      console.log("currentSongID: " +currentSongID);
       var dialog = document.getElementById('myDialog');
       dialog.style.display = 'block';
     }
+    function callAllPlayList() {
+      // Fetch dữ liệu từ API
+      fetch("http://127.0.0.1:8000/api/playlist/getplaylist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id: currentUser }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          updateExistPlayList(data)
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("Lỗi khi tải dữ liệu:", error);
+        });
+    }
+    async function updateExistPlayList(data) {
+      const existPlayList = data
+      const existArea = document.getElementById("existing-playlist")
+      existArea.innerHTML = ""
+      data.forEach((existPlayList) => {
+        Item = `
+            <div class="d-flex text-center mt-2" style="border-bottom: 1px solid gray">
+              <p class="mr-3 mt-2">${existPlayList.name}</p>
+              <input type="checkbox" value="${existPlayList.id}">
+            </div>
+            `;
+        existArea.innerHTML += Item;
+      });
+    }
+    function addSongToSelectedPlaylists() {
+      // Lấy danh sách tất cả các ô checkbox
+      const checkboxes = document.querySelectorAll('#existing-playlist input[type="checkbox"]');
 
+      // Lặp qua từng ô checkbox và kiểm tra xem có được chọn không
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          // Gửi request API khi ô checkbox được chọn
+          const playlistId = checkbox.value;
+          sendApiRequestToAddSong(playlistId);
+        }
+      });
+    }
+    function sendApiRequestToAddSong(playlistId) {
+      // Lấy thông tin bài hát hoặc sử dụng dữ liệu cần thiết
+      const songData = {
+        song_id: currentSongID,
+        playlist_id: playlistId,
+      };
+
+      // Gửi request API để thêm bài hát vào playlist
+      fetch("http://127.0.0.1:8000/api/playlist/song/addsong", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(songData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Bài hát đã được thêm vào playlist thành công:", data);
+        })
+        .catch((error) => {
+          console.error("Lỗi khi thêm bài hát vào playlist:", error);
+        });
+    }
     function closeDialog() {
       var dialog = document.getElementById('myDialog');
       dialog.style.display = 'none';
       addSongToSelectedPlaylists();
+      songID = null
     }
     function showAddPlayList() {
       var addPlayListSection = document.getElementById('inputAddPlayList');
@@ -359,7 +430,26 @@
         addPlayListSection.style.display = 'none';
       }
     }
-
+    function addNewPlaylist() {
+      const pname = document.getElementById("pname").value;
+      const pdes = document.getElementById("pdes").value;
+      const userId = localStorage.getItem("userId");
+      const formData = new FormData();
+      formData.append("name", pname);
+      formData.append("description", pdes);
+      formData.append("user_id", currentUser);
+      console.log(formData);
+      fetch("http://127.0.0.1:8000/api/playlist/newplaylist", {
+        method: "POST",
+        body: formData,
+      }).then((response) => {
+        if (response.status === 201) {
+          fetchData();
+        } else {
+          console.log("Can not cook");
+        }
+      });
+    }
     document.addEventListener('click', function (event) {
       var dialog = document.getElementById('myDialog');
       if (event.target === dialog) {
@@ -380,6 +470,12 @@
         element.classList.add('active');
       }
     }
+    function fetchData(){
+      callAllPlayList();
+    }
+    fetchData()
+  </script>
+  <script>
 
   </script>
 </body>
