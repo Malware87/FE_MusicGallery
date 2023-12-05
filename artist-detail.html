@@ -1,280 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Bootstrap 4 CND -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="shortcut icon" href="images/favicon.ico" />
-  <!-- Bootstrap 4 CND -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 
-  <!-- jQuery library -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- link box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- link css -->
+    <link rel="stylesheet" href="Nam.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/search-bar.js"></script>
+    <script src="./Admin/js/loginTrue.js"></script>
+  </head>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- link box icon -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- link css -->
-  <link rel="stylesheet" href="Nam.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="js/search-bar.js"></script>
-  <script src="./Admin/js/loginTrue.js"></script>
-
-
-</head>
-
-<body>
-  <!-- header -->
-  <div class="row header text-light" style="height: 55px;">
-    <div class="col-3 header-logo">
-      <a href="index.html" style="padding-left:20px"><img style="height: 50px; width:80px;" src="images/logo.jpg"
-          alt="logo header"></a>
-    </div>
-    <div class="col d-flex center header-search">
-      <input id="search-input" class="pl-2" type="text" placeholder="Nhập Từ Khóa Tìm Kiếm ...">
-      <button class="mr-2" onclick="Search()"><i class='bx bx-search'></i></button>
-    </div>
-    <div class="col-3 d-flex center" id="avatarFrame">
-      <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
-      <p class="mt-3">/</p>
-      <a class="ml-2" href="./Login/?#">Đăng Kí</a>
-    </div>
-  </div>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-3">
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="bxh.html" id="navbarDropdownMenuLink">
-            Bảng Xếp Hạng
-          </a>
-        </li>
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="artist.html" id="navbarDropdownMenuLink">
-            Ca Sĩ
-          </a>
-        </li>
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link  text-white" href="album.html" id="navbarDropdownMenuLink">
-            Thể loại
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!--Content-->>
-  <div class="container">
-    <div class="text-center">
-      <img class="imgArtis_detail" src="background.jpg" alt="img-ca-sĩ">
-      <div style="margin-top: -100px; color: white">
-        <h1 id="singer-name"></h1>
-        <p id="listen-count">Sô lượt nghe:</p>
+  <body>
+    <!-- header -->
+    <div class="row header text-light" style="height: 55px">
+      <div class="col-3 header-logo">
+        <a href="index.html" style="padding-left: 20px"
+          ><img
+            style="height: 50px; width: 80px"
+            src="images/logo.jpg"
+            alt="logo header"
+        /></a>
+      </div>
+      <div class="col d-flex center header-search">
+        <input
+          id="search-input"
+          class="pl-2"
+          type="text"
+          placeholder="Nhập Từ Khóa Tìm Kiếm ..."
+        />
+        <button class="mr-2" onclick="Search()">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+      <div class="col-3 d-flex center" id="avatarFrame">
+        <a class="mr-2" href="./Login/?#">Đăng Nhập</a>
+        <p class="mt-3">/</p>
+        <a class="ml-2" href="./Login/?#">Đăng Kí</a>
       </div>
     </div>
-    <div class="row" style="min-height: 500px;">
-      <div class="col-8">
-        <h1 class="mt-3" style="padding-left: 40px; width: 380px">Bài Hát</h1>
-        <ul id="list-songs">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-3">
+          <li class="nav-item dropdown ml-3">
+            <a
+              class="nav-link text-white"
+              href="bxh.html"
+              id="navbarDropdownMenuLink"
+            >
+              Bảng Xếp Hạng
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-3">
+            <a
+              class="nav-link text-white"
+              href="artist.html"
+              id="navbarDropdownMenuLink"
+            >
+              Ca Sĩ
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-3">
+            <a
+              class="nav-link text-white"
+              href="album.html"
+              id="navbarDropdownMenuLink"
+            >
+              Thể loại
+            </a>
+          </li>
         </ul>
       </div>
-      <div class="col-4">
-        <img src="" class="image-artist" style="width: 100%;
-          height: auto;
-          padding-top: 30px;
-          padding-left: 40px;">
+    </nav>
+
+    <!--Content-->>
+    <div class="container">
+      <div class="text-center">
+        <img class="imgArtis_detail" src="background.jpg" alt="img-ca-sĩ" />
+        <div style="margin-top: -100px; color: white">
+          <h1 id="singer-name"></h1>
+          <p id="listen-count">Sô lượt nghe:</p>
+        </div>
+      </div>
+      <div class="row" style="min-height: 500px">
+        <div class="col-8">
+          <h1 class="mt-3" style="padding-left: 40px; width: 380px">Bài Hát</h1>
+          <ul id="list-songs"></ul>
+        </div>
+        <div class="col-4">
+          <img
+            src=""
+            class="image-artist"
+            style="
+              width: 100%;
+              height: auto;
+              padding-top: 30px;
+              padding-left: 40px;
+            "
+          />
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    let singerID
-    // Lấy giá trị của 'id' từ URL
-    const urlParams = new URLSearchParams(window.location.search);
-    singerID = urlParams.get("id");
-    function getListenCount() {
-      fetch("http://127.0.0.1:8000/api/getTotalListenCount", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: singerID }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          updateListenCount(data);
+    <script>
+      let singerID;
+      // Lấy giá trị của 'id' từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      singerID = urlParams.get("id");
+      function getListenCount() {
+        fetch("http://127.0.0.1:8000/api/getTotalListenCount", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: singerID }),
         })
-        .catch((error) => {
-          console.error("Lỗi khi tải dữ liệu:", error);
-        });
-    }
-    function callSinger() {
-      fetch("http://127.0.0.1:8000/api/singer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: singerID }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          updateSinger(data);
+          .then((response) => response.json())
+          .then((data) => {
+            updateListenCount(data);
+          })
+          .catch((error) => {
+            console.error("Lỗi khi tải dữ liệu:", error);
+          });
+      }
+      function callSinger() {
+        fetch("http://127.0.0.1:8000/api/singer", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: singerID }),
         })
-        .catch((error) => {
-          console.error("Lỗi khi tải dữ liệu:", error);
-        });
-    }
-    function callSong() {
-      fetch("http://127.0.0.1:8000/api/song/searchbysinger", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ singerID: singerID }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          const songs = Object.values(data)
-          updateSongs(songs);
+          .then((response) => response.json())
+          .then((data) => {
+            updateSinger(data);
+          })
+          .catch((error) => {
+            console.error("Lỗi khi tải dữ liệu:", error);
+          });
+      }
+      function callSong() {
+        fetch("http://127.0.0.1:8000/api/song/searchbysinger", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ singerID: singerID }),
         })
-        .catch((error) => {
-          console.error("Lỗi khi tải dữ liệu:", error);
-        });
-    }
-    async function updateSinger(data) {
-      const singerData = data;
-      document.getElementById("singer-name").innerHTML = `<b>${singerData.name}</b>`
-      document.querySelector(".image-artist").src = "http://127.0.0.1:8000" + singerData.urlAvatar;
-    }
-    async function updateSongs(data) {
-      const listSong = document.getElementById('list-songs');
-      // Kiểm tra xem phần tử artistList có tồn tại không trước khi tiếp tục
-      if (listSong) {
-        listSong.innerHTML = "";
-        data.forEach((songs) => {
-          const listItem = `
+          .then((response) => response.json())
+          .then((data) => {
+            const songs = Object.values(data);
+            updateSongs(songs);
+          })
+          .catch((error) => {
+            console.error("Lỗi khi tải dữ liệu:", error);
+          });
+      }
+      async function updateSinger(data) {
+        const singerData = data;
+        document.getElementById(
+          "singer-name"
+        ).innerHTML = `<b>${singerData.name}</b>`;
+        document.querySelector(".image-artist").src =
+          "http://127.0.0.1:8000" + singerData.urlAvatar;
+      }
+      async function updateSongs(data) {
+        const listSong = document.getElementById("list-songs");
+        // Kiểm tra xem phần tử artistList có tồn tại không trước khi tiếp tục
+        if (listSong) {
+          listSong.innerHTML = "";
+          data.forEach((songs) => {
+            const listItem = `
           <li class=" mt-1 mb-2 pt-3 w-100 pb-2" style="border-bottom: 1px solid black; width: 380px; list-style: none;">
             <a class="mb-3" href="play.html?id=${songs.id}"><b>${songs.title}</b></a>
         </li>
           `;
-          listSong.innerHTML += listItem;
-        });
-      } else {
-        console.error("Không tìm thấy phần tử với ID 'artist-list'.");
+            listSong.innerHTML += listItem;
+          });
+        } else {
+          console.error("Không tìm thấy phần tử với ID 'artist-list'.");
+        }
       }
-    }
-    async function updateListenCount(data) {
-      const ListenCount = document.getElementById('listen-count');
-      // Kiểm tra xem phần tử artistList có tồn tại không trước khi tiếp tục
-      ListenCount.innerHTML = "";
-      ListenCount.innerHTML = "Tổng số lượt nghe " + data.total_listen_count;
-    };
+      async function updateListenCount(data) {
+        const ListenCount = document.getElementById("listen-count");
+        // Kiểm tra xem phần tử artistList có tồn tại không trước khi tiếp tục
+        ListenCount.innerHTML = "";
+        ListenCount.innerHTML = "Tổng số lượt nghe " + data.total_listen_count;
+      }
 
-    function fetchData() {
-      getListenCount();
-      callSinger();
-      callSong();
-    }
-    fetchData();
-  </script>
-  <!-- Footer -->
-  <footer class="page-footer font-small indigo bg-dark">
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-      <!-- Grid row -->
-      <div class="row">
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Thông Tin</h5>
-          <ul class="list-unstyled footer_list ">
-            <li>
-              <a href="#!">Very long link 1</a>
-            </li>
-            <li>
-              <a href="#!">Very long link 2</a>
-            </li>
-            <li>
-              <a href="#!">Very long link 3</a>
-            </li>
-            <li>
-              <a href="#!">Very long link 4</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-        <hr class="clearfix w-100 d-md-none">
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Bảng Xếp Hạng</h5>
-          <ul class="list-unstyled footer_list">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-        <hr class="clearfix w-100 d-md-none">
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Tải Ứng Dụng</h5>
-
-          <ul class="list-unstyled footer_list">
-
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Liên Kết</h5>
-
-          <ul class="list-unstyled footer_list">
-
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
+      function fetchData() {
+        getListenCount();
+        callSinger();
+        callSong();
+      }
+      fetchData();
+    </script>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo bg-dark">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3 text-white">
+        © 2023 Copyright:
+        <a href="#">TNIT</a>
       </div>
-      <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 text-white">© 2023 Copyright:
-      <a href="/"> TNIT</a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
